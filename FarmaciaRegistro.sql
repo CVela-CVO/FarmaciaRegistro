@@ -16,6 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `clientes`
+--
+
+DROP TABLE IF EXISTS `clientes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clientes` (
+  `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
+  `name_cliente` varchar(80) NOT NULL,
+  `nit_cliente` varchar(11) NOT NULL,
+  `num_cliente` varchar(8) NOT NULL,
+  `dir_cliente` varchar(55) NOT NULL,
+  PRIMARY KEY (`id_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clientes`
+--
+
+LOCK TABLES `clientes` WRITE;
+/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `departamentos`
 --
 
@@ -37,6 +63,35 @@ LOCK TABLES `departamentos` WRITE;
 /*!40000 ALTER TABLE `departamentos` DISABLE KEYS */;
 INSERT INTO `departamentos` VALUES (1,'Alta\r\nVerapaz'),(2,'Baja Verapaz'),(3,'Chimaltenago'),(4,'Chiquimula'),(5,'Guatemala'),(6,'El Progreso'),(7,'Escuintla'),(8,'Huehuetenango'),(9,'Izabal'),(10,'Jalapa'),(11,'Jutiapa'),(12,'Petén'),(13,'Quetzaltenango'),(14,'Quiché'),(15,'Retalhuleu'),(16,'Sacatepequez'),(17,'San Marcos'),(18,'Santa Rosa'),(19,'Sololá'),(20,'Suchitepequez'),(21,'Totonicapán'),(22,'Zacapa');
 /*!40000 ALTER TABLE `departamentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `detalle_pedidos`
+--
+
+DROP TABLE IF EXISTS `detalle_pedidos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `detalle_pedidos` (
+  `id_detalle` int(11) NOT NULL AUTO_INCREMENT,
+  `id_pedido` int(11) NOT NULL,
+  `id_medicamento` int(11) NOT NULL,
+  `medicamento_cantidad` int(12) NOT NULL,
+  PRIMARY KEY (`id_detalle`),
+  KEY `fk_pedido` (`id_pedido`),
+  KEY `fk_medicapedido` (`id_medicamento`),
+  CONSTRAINT `detalle_pedidos_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `detalle_pedidos_ibfk_2` FOREIGN KEY (`id_medicamento`) REFERENCES `medicamento` (`id_medicamento`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `detalle_pedidos`
+--
+
+LOCK TABLES `detalle_pedidos` WRITE;
+/*!40000 ALTER TABLE `detalle_pedidos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `detalle_pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -163,18 +218,16 @@ DROP TABLE IF EXISTS `pedidos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pedidos` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
-  `namecliente` varchar(100) NOT NULL,
-  `nit_cliente` varchar(100) NOT NULL,
-  `num_cliente` varchar(100) NOT NULL,
-  `monto_pedido` varchar(100) NOT NULL,
-  `listproduc_name` varchar(1200) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
   `fecha_pedido` date NOT NULL,
   `id_user` int(11) NOT NULL,
   `serie_pedido` varchar(100) NOT NULL,
   PRIMARY KEY (`id_pedido`),
   UNIQUE KEY `id_pedido` (`id_pedido`),
   KEY `fk_user` (`id_user`),
-  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_cliente` (`id_cliente`),
+  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -231,4 +284,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-23  9:03:34
+-- Dump completed on 2022-08-25 14:23:29
