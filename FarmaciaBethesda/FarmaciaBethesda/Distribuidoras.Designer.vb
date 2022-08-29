@@ -23,10 +23,14 @@ Partial Class Distribuidoras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Distribuidoras))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TbNumero = New System.Windows.Forms.TextBox()
+        Me.TbDireccion = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.CbDpto = New System.Windows.Forms.ComboBox()
         Me.BtVolver = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -39,20 +43,10 @@ Partial Class Distribuidoras
         Me.TbNombre = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DTGmarcas = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BtEditar = New System.Windows.Forms.Button()
         Me.BtNuevo = New System.Windows.Forms.Button()
         Me.BtEliminar = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TbDireccion = New System.Windows.Forms.TextBox()
-        Me.TbNumero = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PbDistribuidoras, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +78,43 @@ Partial Class Distribuidoras
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Pink
+        Me.Label5.Location = New System.Drawing.Point(2, 289)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(88, 22)
+        Me.Label5.TabIndex = 32
+        Me.Label5.Text = "Numero:"
+        '
+        'TbNumero
+        '
+        Me.TbNumero.Location = New System.Drawing.Point(179, 293)
+        Me.TbNumero.MaxLength = 8
+        Me.TbNumero.Name = "TbNumero"
+        Me.TbNumero.Size = New System.Drawing.Size(168, 20)
+        Me.TbNumero.TabIndex = 31
+        '
+        'TbDireccion
+        '
+        Me.TbDireccion.Location = New System.Drawing.Point(179, 267)
+        Me.TbDireccion.Name = "TbDireccion"
+        Me.TbDireccion.Size = New System.Drawing.Size(168, 20)
+        Me.TbDireccion.TabIndex = 30
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Pink
+        Me.Label4.Location = New System.Drawing.Point(2, 263)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(101, 22)
+        Me.Label4.TabIndex = 29
+        Me.Label4.Text = "Dirección:"
         '
         'CbDpto
         '
@@ -205,68 +236,37 @@ Partial Class Distribuidoras
         Me.DTGmarcas.BackgroundColor = System.Drawing.Color.Pink
         Me.DTGmarcas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DTGmarcas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Crimson
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DTGmarcas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Crimson
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DTGmarcas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DTGmarcas.ColumnHeadersHeight = 30
         Me.DTGmarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DTGmarcas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
         Me.DTGmarcas.EnableHeadersVisualStyles = False
         Me.DTGmarcas.GridColor = System.Drawing.Color.PaleVioletRed
         Me.DTGmarcas.Location = New System.Drawing.Point(12, 30)
         Me.DTGmarcas.Name = "DTGmarcas"
         Me.DTGmarcas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Pink
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DTGmarcas.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Pink
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.DTGmarcas.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Pink
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DTGmarcas.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Pink
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DTGmarcas.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DTGmarcas.Size = New System.Drawing.Size(415, 271)
         Me.DTGmarcas.TabIndex = 14
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ejemplo 1"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Column2"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Column3"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Column4"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Column5"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Column6"
-        Me.Column6.Name = "Column6"
         '
         'Label3
         '
@@ -318,43 +318,6 @@ Partial Class Distribuidoras
         Me.BtEliminar.Text = "Eliminar"
         Me.BtEliminar.UseVisualStyleBackColor = False
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Pink
-        Me.Label4.Location = New System.Drawing.Point(2, 263)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 22)
-        Me.Label4.TabIndex = 29
-        Me.Label4.Text = "Dirección:"
-        '
-        'TbDireccion
-        '
-        Me.TbDireccion.Location = New System.Drawing.Point(179, 267)
-        Me.TbDireccion.Name = "TbDireccion"
-        Me.TbDireccion.Size = New System.Drawing.Size(168, 20)
-        Me.TbDireccion.TabIndex = 30
-        '
-        'TbNumero
-        '
-        Me.TbNumero.Location = New System.Drawing.Point(179, 293)
-        Me.TbNumero.MaxLength = 8
-        Me.TbNumero.Name = "TbNumero"
-        Me.TbNumero.Size = New System.Drawing.Size(168, 20)
-        Me.TbNumero.TabIndex = 31
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Pink
-        Me.Label5.Location = New System.Drawing.Point(2, 289)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(88, 22)
-        Me.Label5.TabIndex = 32
-        Me.Label5.Text = "Numero:"
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
@@ -399,12 +362,6 @@ Partial Class Distribuidoras
     Friend WithEvents TbNombre As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DTGmarcas As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Label3 As Label
     Friend WithEvents BtEditar As Button
     Friend WithEvents BtNuevo As Button
