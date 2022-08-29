@@ -16,3 +16,7 @@ C:\Users\Pablo Pc Master Race\Source\Repos\uwu-proyectos\FarmaciaBethesda\Farmac
 C:\Users\Pablo Pc Master Race\Source\Repos\uwu-proyectos\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Marcas.resources
 C:\Users\Pablo Pc Master Race\Source\Repos\uwu-proyectos\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Distribuidoras.resources
 C:\Users\Pablo Pc Master Race\Source\Repos\uwu-proyectos\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Ventas.resources
+C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\FarmaciaBethesda.exe.config
+C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.exe
+C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.xml
+C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.pdb
