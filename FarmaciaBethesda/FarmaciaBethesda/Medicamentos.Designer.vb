@@ -29,6 +29,8 @@ Partial Class Medicamentos
         Me.DTGmedicamentos = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.BtVolver = New System.Windows.Forms.Button()
         Me.NUDexistencias = New System.Windows.Forms.NumericUpDown()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -55,8 +57,6 @@ Partial Class Medicamentos
         Me.BtEliminar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.DTGmedicamentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NUDexistencias, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +68,8 @@ Partial Class Medicamentos
         '
         'DTGmedicamentos
         '
+        Me.DTGmedicamentos.AllowUserToAddRows = False
+        Me.DTGmedicamentos.AllowUserToDeleteRows = False
         Me.DTGmedicamentos.BackgroundColor = System.Drawing.Color.Pink
         Me.DTGmedicamentos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DTGmedicamentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -85,6 +87,7 @@ Partial Class Medicamentos
         Me.DTGmedicamentos.GridColor = System.Drawing.Color.PaleVioletRed
         Me.DTGmedicamentos.Location = New System.Drawing.Point(12, 34)
         Me.DTGmedicamentos.Name = "DTGmedicamentos"
+        Me.DTGmedicamentos.ReadOnly = True
         Me.DTGmedicamentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.Pink
@@ -147,6 +150,22 @@ Partial Class Medicamentos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(200, 318)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(168, 21)
+        Me.ComboBox2.TabIndex = 29
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(200, 240)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(168, 21)
+        Me.ComboBox1.TabIndex = 28
+        '
         'BtVolver
         '
         Me.BtVolver.BackColor = System.Drawing.Color.PaleVioletRed
@@ -180,22 +199,27 @@ Partial Class Medicamentos
         '
         'NUDprecio
         '
+        Me.NUDprecio.DecimalPlaces = 2
         Me.NUDprecio.Location = New System.Drawing.Point(200, 371)
         Me.NUDprecio.Maximum = New Decimal(New Integer() {276447232, 23283, 0, 0})
         Me.NUDprecio.Name = "NUDprecio"
         Me.NUDprecio.Size = New System.Drawing.Size(168, 20)
         Me.NUDprecio.TabIndex = 24
+        Me.NUDprecio.Value = New Decimal(New Integer() {1, 0, 0, 65536})
         '
         'NUDcosto
         '
+        Me.NUDcosto.DecimalPlaces = 2
         Me.NUDcosto.Location = New System.Drawing.Point(200, 345)
         Me.NUDcosto.Maximum = New Decimal(New Integer() {276447232, 23283, 0, 0})
         Me.NUDcosto.Name = "NUDcosto"
         Me.NUDcosto.Size = New System.Drawing.Size(168, 20)
         Me.NUDcosto.TabIndex = 23
+        Me.NUDcosto.Value = New Decimal(New Integer() {1, 0, 0, 65536})
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(200, 266)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(168, 20)
@@ -402,22 +426,6 @@ Partial Class Medicamentos
         'OpenFileDialog2
         '
         Me.OpenFileDialog2.FileName = "OpenFileDialog2"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(200, 240)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(168, 21)
-        Me.ComboBox1.TabIndex = 28
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(200, 318)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(168, 21)
-        Me.ComboBox2.TabIndex = 29
         '
         'Medicamentos
         '

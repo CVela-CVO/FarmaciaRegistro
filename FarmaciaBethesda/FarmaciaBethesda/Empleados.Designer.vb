@@ -23,10 +23,11 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtVolver = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.RdVendedor = New System.Windows.Forms.RadioButton()
@@ -60,7 +61,6 @@ Partial Class Empleados
         Me.BtEditar = New System.Windows.Forms.Button()
         Me.BtEliminar = New System.Windows.Forms.Button()
         Me.BtNuevo = New System.Windows.Forms.Button()
-        Me.BtVolver = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PbEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +98,19 @@ Partial Class Empleados
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
+        '
+        'BtVolver
+        '
+        Me.BtVolver.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtVolver.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtVolver.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtVolver.Location = New System.Drawing.Point(6, 433)
+        Me.BtVolver.Name = "BtVolver"
+        Me.BtVolver.Size = New System.Drawing.Size(81, 36)
+        Me.BtVolver.TabIndex = 11
+        Me.BtVolver.Text = "Volver"
+        Me.BtVolver.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -313,14 +326,14 @@ Partial Class Empleados
         Me.DTGempleados.BackgroundColor = System.Drawing.Color.Pink
         Me.DTGempleados.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DTGempleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Crimson
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DTGempleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Crimson
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DTGempleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DTGempleados.ColumnHeadersHeight = 30
         Me.DTGempleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DTGempleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
@@ -329,20 +342,20 @@ Partial Class Empleados
         Me.DTGempleados.Location = New System.Drawing.Point(12, 40)
         Me.DTGempleados.Name = "DTGempleados"
         Me.DTGempleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Pink
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DTGempleados.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Pink
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        Me.DTGempleados.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Pink
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DTGempleados.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Pink
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DTGempleados.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DTGempleados.Size = New System.Drawing.Size(517, 345)
         Me.DTGempleados.TabIndex = 1
         '
@@ -429,19 +442,6 @@ Partial Class Empleados
         Me.BtNuevo.TabIndex = 10
         Me.BtNuevo.Text = "Nuevo"
         Me.BtNuevo.UseVisualStyleBackColor = False
-        '
-        'BtVolver
-        '
-        Me.BtVolver.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtVolver.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtVolver.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtVolver.Location = New System.Drawing.Point(6, 433)
-        Me.BtVolver.Name = "BtVolver"
-        Me.BtVolver.Size = New System.Drawing.Size(81, 36)
-        Me.BtVolver.TabIndex = 11
-        Me.BtVolver.Text = "Volver"
-        Me.BtVolver.UseVisualStyleBackColor = False
         '
         'Empleados
         '

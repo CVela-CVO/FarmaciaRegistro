@@ -1,8 +1,8 @@
 ﻿Public Class MenuM
+    Dim usertoken = Login.tokenusertype
     Private Sub BtVolver_Click(sender As Object, e As EventArgs) Handles BtVolver.Click
         Me.Hide()
         Login.Show()
-
     End Sub
 
     Private Sub BtSalir_Click(sender As Object, e As EventArgs) Handles BtSalir.Click
@@ -12,30 +12,34 @@
     Private Sub BtUsuarios_Click(sender As Object, e As EventArgs) Handles BtUsuarios.Click
         Me.Hide()
         Empleados.Show()
-
     End Sub
 
     Private Sub BtInventario_Click(sender As Object, e As EventArgs) Handles BtInventario.Click
         Me.Hide()
         Medicamentos.Show()
-
     End Sub
 
-    Private Sub TbMarcas_Click(sender As Object, e As EventArgs) Handles TbMarcas.Click
+    Private Sub TbMarcas_Click(sender As Object, e As EventArgs) Handles BtMarcas.Click
         Me.Hide()
         Marcas.Show()
-
     End Sub
 
-    Private Sub TbDistrib_Click(sender As Object, e As EventArgs) Handles TbDistrib.Click
+    Private Sub TbDistrib_Click(sender As Object, e As EventArgs) Handles BtDistrib.Click
         Me.Hide()
         Distribuidoras.Show()
-
     End Sub
 
     Private Sub BtVender_Click(sender As Object, e As EventArgs) Handles BtVender.Click
         Me.Hide()
         Ventas.Show()
+    End Sub
 
+    Private Sub MenuM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If usertoken = "Empleado" Then
+            BtInventario.Enabled = False
+            BtUsuarios.Enabled = False
+            BtDistrib.Enabled = False
+            BtMarcas.Enabled = False
+        End If
     End Sub
 End Class

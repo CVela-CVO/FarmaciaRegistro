@@ -12,4 +12,8 @@
         MenuM.Show()
 
     End Sub
+
+    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -32,8 +32,8 @@ Partial Class MenuM
         Me.BtVender = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtUsuarios = New System.Windows.Forms.Button()
-        Me.TbMarcas = New System.Windows.Forms.Button()
-        Me.TbDistrib = New System.Windows.Forms.Button()
+        Me.BtMarcas = New System.Windows.Forms.Button()
+        Me.BtDistrib = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -147,31 +147,31 @@ Partial Class MenuM
         Me.BtUsuarios.Text = "Añadir usuario"
         Me.BtUsuarios.UseVisualStyleBackColor = False
         '
-        'TbMarcas
+        'BtMarcas
         '
-        Me.TbMarcas.BackColor = System.Drawing.Color.Pink
-        Me.TbMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.TbMarcas.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TbMarcas.ForeColor = System.Drawing.SystemColors.Info
-        Me.TbMarcas.Location = New System.Drawing.Point(149, 102)
-        Me.TbMarcas.Name = "TbMarcas"
-        Me.TbMarcas.Size = New System.Drawing.Size(133, 48)
-        Me.TbMarcas.TabIndex = 12
-        Me.TbMarcas.Text = "Marcas"
-        Me.TbMarcas.UseVisualStyleBackColor = False
+        Me.BtMarcas.BackColor = System.Drawing.Color.Pink
+        Me.BtMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtMarcas.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtMarcas.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtMarcas.Location = New System.Drawing.Point(149, 102)
+        Me.BtMarcas.Name = "BtMarcas"
+        Me.BtMarcas.Size = New System.Drawing.Size(133, 48)
+        Me.BtMarcas.TabIndex = 12
+        Me.BtMarcas.Text = "Marcas"
+        Me.BtMarcas.UseVisualStyleBackColor = False
         '
-        'TbDistrib
+        'BtDistrib
         '
-        Me.TbDistrib.BackColor = System.Drawing.Color.Pink
-        Me.TbDistrib.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.TbDistrib.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TbDistrib.ForeColor = System.Drawing.SystemColors.Info
-        Me.TbDistrib.Location = New System.Drawing.Point(292, 102)
-        Me.TbDistrib.Name = "TbDistrib"
-        Me.TbDistrib.Size = New System.Drawing.Size(157, 48)
-        Me.TbDistrib.TabIndex = 13
-        Me.TbDistrib.Text = "Distribuidoras"
-        Me.TbDistrib.UseVisualStyleBackColor = False
+        Me.BtDistrib.BackColor = System.Drawing.Color.Pink
+        Me.BtDistrib.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtDistrib.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtDistrib.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtDistrib.Location = New System.Drawing.Point(292, 102)
+        Me.BtDistrib.Name = "BtDistrib"
+        Me.BtDistrib.Size = New System.Drawing.Size(157, 48)
+        Me.BtDistrib.TabIndex = 13
+        Me.BtDistrib.Text = "Distribuidoras"
+        Me.BtDistrib.UseVisualStyleBackColor = False
         '
         'MenuM
         '
@@ -179,8 +179,8 @@ Partial Class MenuM
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(461, 261)
-        Me.Controls.Add(Me.TbDistrib)
-        Me.Controls.Add(Me.TbMarcas)
+        Me.Controls.Add(Me.BtDistrib)
+        Me.Controls.Add(Me.BtMarcas)
         Me.Controls.Add(Me.BtUsuarios)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtVender)
@@ -208,6 +208,6 @@ Partial Class MenuM
     Friend WithEvents BtVender As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents BtUsuarios As Button
-    Friend WithEvents TbMarcas As Button
-    Friend WithEvents TbDistrib As Button
+    Friend WithEvents BtMarcas As Button
+    Friend WithEvents BtDistrib As Button
 End Class
