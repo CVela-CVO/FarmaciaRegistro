@@ -81,14 +81,7 @@ Public Class Distribuidoras
         End Try
     End Sub
     Private Sub DTGmarcas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGmarcas.CellContentClick
-        index = e.RowIndex
-        Dim selectedrow As DataGridViewRow
-        selectedrow = DTGmarcas.Rows(index)
-        stringindex = selectedrow.Cells(0).Value.ToString
-        TbNombre.Text = selectedrow.Cells(1).Value.ToString
-        CbDpto.SelectedItem = selectedrow.Cells(2).Value.ToString
-        TbDireccion.Text = selectedrow.Cells(3).Value.ToString
-        TbNumero.Text = selectedrow.Cells(4).Value.ToString
+
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
@@ -96,8 +89,12 @@ Public Class Distribuidoras
     End Sub
 
     Private Sub Distribuidoras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ReadQuery()
-        cbdeptodata()
+        Try
+            ReadQuery()
+            cbdeptodata()
+        Catch EX As Exception
+            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
@@ -153,7 +150,12 @@ Public Class Distribuidoras
     End Sub
 
     Private Sub BtGuardar_Click(sender As Object, e As EventArgs) Handles BtGuardar.Click
-        guardardatos()
+        Try
+            guardardatos()
+        Catch EX As Exception
+            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub BtVolver_Click(sender As Object, e As EventArgs) Handles BtVolver.Click
@@ -164,5 +166,16 @@ Public Class Distribuidoras
 
     Private Sub BtExaminar_Click(sender As Object, e As EventArgs) 
 
+    End Sub
+
+    Private Sub DTGmarcas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGmarcas.CellClick
+        index = e.RowIndex
+        Dim selectedrow As DataGridViewRow
+        selectedrow = DTGmarcas.Rows(index)
+        stringindex = selectedrow.Cells(0).Value.ToString
+        TbNombre.Text = selectedrow.Cells(1).Value.ToString
+        CbDpto.SelectedItem = selectedrow.Cells(2).Value.ToString
+        TbDireccion.Text = selectedrow.Cells(3).Value.ToString
+        TbNumero.Text = selectedrow.Cells(4).Value.ToString
     End Sub
 End Class
