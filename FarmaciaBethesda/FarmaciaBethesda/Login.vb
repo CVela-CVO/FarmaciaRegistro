@@ -17,7 +17,6 @@ Public Class Login
         tokenusertype = dt.Rows(0)("usertype").ToString
         conn.Close()
     End Sub
-
     Private Sub BtLogout_Click(sender As Object, e As EventArgs) Handles BtLogout.Click
         End
     End Sub
@@ -27,7 +26,7 @@ Public Class Login
         Dim md5 As New MD5CryptoServiceProvider()
         Dim clave As String
         clave = TbContraseña.Text
-        Dim Hash() As Byte = md5.computehash(codigo.GetBytes(clave))
+        Dim Hash() As Byte = md5.ComputeHash(codigo.GetBytes(clave))
         Dim nuevaclave As String
         nuevaclave = Convert.ToBase64String(Hash)
         Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password="
@@ -49,5 +48,19 @@ Public Class Login
         conn.Close()
         TbUsuario.Clear()
         TbContraseña.Clear()
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        MenuM.Show()
+
     End Sub
 End Class

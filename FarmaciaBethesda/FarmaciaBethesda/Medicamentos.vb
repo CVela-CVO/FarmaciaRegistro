@@ -128,6 +128,11 @@ Public Class Medicamentos
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub BtExaminar_Click(sender As Object, e As EventArgs) Handles BtExaminar.Click
         Try
             OpenFileDialog1.ShowDialog()

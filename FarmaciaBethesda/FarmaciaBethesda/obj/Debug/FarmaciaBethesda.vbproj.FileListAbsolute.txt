@@ -45,3 +45,32 @@ C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\Fa
 C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Resources.resources
 C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Ventas.resources
 C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.vbproj.GenerateResource.Cache
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\FarmaciaBethesda.exe.config
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.exe
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.xml
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.pdb
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\FarmaciaBethesda.exe
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\FarmaciaBethesda.pdb
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\FarmaciaBethesda.xml
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\Guna.UI2.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\MySql.Data.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\Google.Protobuf.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\ZstdNet.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\K4os.Compression.LZ4.Streams.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\BouncyCastle.Crypto.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\Ubiety.Dns.Core.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\System.Buffers.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\K4os.Compression.LZ4.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\K4os.Hash.xxHash.dll
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\bin\Debug\MySql.Data.xml
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.vbprojResolveAssemblyReference.cache
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.vbproj.FarmaciaBethesda.exe.config
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Distribuidoras.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Empleados.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Login.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Marcas.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Medicamentos.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.MenuM.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Resources.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Ventas.resources
+F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.vbproj.GenerateResource.Cache

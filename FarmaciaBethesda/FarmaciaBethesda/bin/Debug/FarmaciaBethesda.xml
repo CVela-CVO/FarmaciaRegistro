@@ -22,5 +22,12 @@ FarmaciaBethesda
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:FarmaciaBethesda.Medicamentos.BtExaminar_Click(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 </members>
 </doc>

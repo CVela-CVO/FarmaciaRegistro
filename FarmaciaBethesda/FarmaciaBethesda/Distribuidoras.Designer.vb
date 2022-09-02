@@ -22,10 +22,10 @@ Partial Class Distribuidoras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Distribuidoras))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Distribuidoras))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TbNumero = New System.Windows.Forms.TextBox()
@@ -33,15 +33,11 @@ Partial Class Distribuidoras
         Me.Label4 = New System.Windows.Forms.Label()
         Me.CbDpto = New System.Windows.Forms.ComboBox()
         Me.BtVolver = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtGuardar = New System.Windows.Forms.Button()
-        Me.BtExaminar = New System.Windows.Forms.Button()
-        Me.PbDistribuidoras = New System.Windows.Forms.PictureBox()
         Me.TbNombre = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DTGmarcas = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BtEditar = New System.Windows.Forms.Button()
@@ -49,8 +45,6 @@ Partial Class Distribuidoras
         Me.BtEliminar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PbDistribuidoras, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DTGmarcas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,15 +57,11 @@ Partial Class Distribuidoras
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.CbDpto)
         Me.GroupBox1.Controls.Add(Me.BtVolver)
-        Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.BtGuardar)
-        Me.GroupBox1.Controls.Add(Me.BtExaminar)
-        Me.GroupBox1.Controls.Add(Me.PbDistribuidoras)
         Me.GroupBox1.Controls.Add(Me.TbNombre)
-        Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(438, -18)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(366, 518)
@@ -84,7 +74,7 @@ Partial Class Distribuidoras
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Pink
-        Me.Label5.Location = New System.Drawing.Point(2, 289)
+        Me.Label5.Location = New System.Drawing.Point(6, 129)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(88, 22)
         Me.Label5.TabIndex = 32
@@ -92,7 +82,7 @@ Partial Class Distribuidoras
         '
         'TbNumero
         '
-        Me.TbNumero.Location = New System.Drawing.Point(179, 293)
+        Me.TbNumero.Location = New System.Drawing.Point(183, 133)
         Me.TbNumero.MaxLength = 8
         Me.TbNumero.Name = "TbNumero"
         Me.TbNumero.Size = New System.Drawing.Size(168, 20)
@@ -100,7 +90,7 @@ Partial Class Distribuidoras
         '
         'TbDireccion
         '
-        Me.TbDireccion.Location = New System.Drawing.Point(179, 267)
+        Me.TbDireccion.Location = New System.Drawing.Point(183, 107)
         Me.TbDireccion.Name = "TbDireccion"
         Me.TbDireccion.Size = New System.Drawing.Size(168, 20)
         Me.TbDireccion.TabIndex = 30
@@ -110,7 +100,7 @@ Partial Class Distribuidoras
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Pink
-        Me.Label4.Location = New System.Drawing.Point(2, 263)
+        Me.Label4.Location = New System.Drawing.Point(6, 103)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(101, 22)
         Me.Label4.TabIndex = 29
@@ -119,8 +109,7 @@ Partial Class Distribuidoras
         'CbDpto
         '
         Me.CbDpto.FormattingEnabled = True
-        Me.CbDpto.Items.AddRange(New Object() {"Alta Verapaz", "Baja Verapaz", "Chimaltenago", "Chiquimula", "Guatemala", "El Progreso", "Escuintla", "Huehuetenango", "Izabal", "Jalapa", "Jutiapa", "Petén", "Quetzaltenango", "Quiché", "Retalhuleu", "Sacatepequez", "San Marcos", "Santa Rosa", "Sololá", "Suchitepequez", "Totonicapán", "Zacapa"})
-        Me.CbDpto.Location = New System.Drawing.Point(179, 240)
+        Me.CbDpto.Location = New System.Drawing.Point(183, 80)
         Me.CbDpto.Name = "CbDpto"
         Me.CbDpto.Size = New System.Drawing.Size(168, 21)
         Me.CbDpto.TabIndex = 28
@@ -131,23 +120,12 @@ Partial Class Distribuidoras
         Me.BtVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtVolver.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtVolver.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtVolver.Location = New System.Drawing.Point(10, 325)
+        Me.BtVolver.Location = New System.Drawing.Point(14, 251)
         Me.BtVolver.Name = "BtVolver"
         Me.BtVolver.Size = New System.Drawing.Size(81, 34)
         Me.BtVolver.TabIndex = 27
         Me.BtVolver.Text = "Volver"
         Me.BtVolver.UseVisualStyleBackColor = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Pink
-        Me.Label10.Location = New System.Drawing.Point(2, 56)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(96, 22)
-        Me.Label10.TabIndex = 20
-        Me.Label10.Text = "Logotipo:"
         '
         'Label9
         '
@@ -165,7 +143,7 @@ Partial Class Distribuidoras
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Pink
-        Me.Label1.Location = New System.Drawing.Point(2, 236)
+        Me.Label1.Location = New System.Drawing.Point(6, 76)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(153, 22)
         Me.Label1.TabIndex = 12
@@ -176,7 +154,7 @@ Partial Class Distribuidoras
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Pink
-        Me.Label2.Location = New System.Drawing.Point(2, 210)
+        Me.Label2.Location = New System.Drawing.Point(6, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(89, 22)
         Me.Label2.TabIndex = 11
@@ -188,48 +166,19 @@ Partial Class Distribuidoras
         Me.BtGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtGuardar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtGuardar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtGuardar.Location = New System.Drawing.Point(179, 323)
+        Me.BtGuardar.Location = New System.Drawing.Point(183, 249)
         Me.BtGuardar.Name = "BtGuardar"
         Me.BtGuardar.Size = New System.Drawing.Size(168, 36)
         Me.BtGuardar.TabIndex = 11
         Me.BtGuardar.Text = "Guardar"
         Me.BtGuardar.UseVisualStyleBackColor = False
         '
-        'BtExaminar
-        '
-        Me.BtExaminar.Location = New System.Drawing.Point(92, 167)
-        Me.BtExaminar.Name = "BtExaminar"
-        Me.BtExaminar.Size = New System.Drawing.Size(75, 23)
-        Me.BtExaminar.TabIndex = 10
-        Me.BtExaminar.Text = "Examinar"
-        Me.BtExaminar.UseVisualStyleBackColor = True
-        '
-        'PbDistribuidoras
-        '
-        Me.PbDistribuidoras.BackColor = System.Drawing.Color.Pink
-        Me.PbDistribuidoras.Location = New System.Drawing.Point(191, 70)
-        Me.PbDistribuidoras.Name = "PbDistribuidoras"
-        Me.PbDistribuidoras.Size = New System.Drawing.Size(147, 106)
-        Me.PbDistribuidoras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PbDistribuidoras.TabIndex = 9
-        Me.PbDistribuidoras.TabStop = False
-        '
         'TbNombre
         '
-        Me.TbNombre.Location = New System.Drawing.Point(179, 214)
+        Me.TbNombre.Location = New System.Drawing.Point(183, 54)
         Me.TbNombre.Name = "TbNombre"
         Me.TbNombre.Size = New System.Drawing.Size(168, 20)
         Me.TbNombre.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(179, 56)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(171, 134)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 21
-        Me.PictureBox1.TabStop = False
         '
         'DTGmarcas
         '
@@ -265,7 +214,7 @@ Partial Class Distribuidoras
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleVioletRed
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.DTGmarcas.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DTGmarcas.Size = New System.Drawing.Size(415, 271)
+        Me.DTGmarcas.Size = New System.Drawing.Size(415, 201)
         Me.DTGmarcas.TabIndex = 14
         '
         'Label3
@@ -285,7 +234,7 @@ Partial Class Distribuidoras
         Me.BtEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtEditar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtEditar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtEditar.Location = New System.Drawing.Point(12, 307)
+        Me.BtEditar.Location = New System.Drawing.Point(11, 237)
         Me.BtEditar.Name = "BtEditar"
         Me.BtEditar.Size = New System.Drawing.Size(105, 34)
         Me.BtEditar.TabIndex = 31
@@ -298,7 +247,7 @@ Partial Class Distribuidoras
         Me.BtNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtNuevo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtNuevo.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtNuevo.Location = New System.Drawing.Point(123, 307)
+        Me.BtNuevo.Location = New System.Drawing.Point(122, 237)
         Me.BtNuevo.Name = "BtNuevo"
         Me.BtNuevo.Size = New System.Drawing.Size(105, 34)
         Me.BtNuevo.TabIndex = 32
@@ -311,7 +260,7 @@ Partial Class Distribuidoras
         Me.BtEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtEliminar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtEliminar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtEliminar.Location = New System.Drawing.Point(234, 307)
+        Me.BtEliminar.Location = New System.Drawing.Point(233, 237)
         Me.BtEliminar.Name = "BtEliminar"
         Me.BtEliminar.Size = New System.Drawing.Size(105, 34)
         Me.BtEliminar.TabIndex = 33
@@ -327,7 +276,7 @@ Partial Class Distribuidoras
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
-        Me.ClientSize = New System.Drawing.Size(801, 353)
+        Me.ClientSize = New System.Drawing.Size(801, 279)
         Me.Controls.Add(Me.BtEliminar)
         Me.Controls.Add(Me.BtNuevo)
         Me.Controls.Add(Me.BtEditar)
@@ -341,8 +290,6 @@ Partial Class Distribuidoras
         Me.Text = "Distribuidoras"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PbDistribuidoras, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DTGmarcas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -352,15 +299,11 @@ Partial Class Distribuidoras
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CbDpto As ComboBox
     Friend WithEvents BtVolver As Button
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents BtGuardar As Button
-    Friend WithEvents BtExaminar As Button
-    Friend WithEvents PbDistribuidoras As PictureBox
     Friend WithEvents TbNombre As TextBox
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DTGmarcas As DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents BtEditar As Button
