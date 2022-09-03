@@ -35,7 +35,7 @@
     End Sub
 
     Private Sub MenuM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If usertoken = "Empleado" Then
+        If usertoken = "Vendedor" Then
             BtInventario.Enabled = False
             BtUsuarios.Enabled = False
             BtDistrib.Enabled = False

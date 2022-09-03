@@ -27,6 +27,10 @@ Partial Class Empleados
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TbVerify = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TbNumero = New System.Windows.Forms.TextBox()
         Me.BtVolver = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -50,12 +54,6 @@ Partial Class Empleados
         Me.TbUserName = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DTGempleados = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtEditar = New System.Windows.Forms.Button()
@@ -70,6 +68,10 @@ Partial Class Empleados
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.TbVerify)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.TbNumero)
         Me.GroupBox1.Controls.Add(Me.BtVolver)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -94,10 +96,47 @@ Partial Class Empleados
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(548, -16)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(378, 492)
+        Me.GroupBox1.Size = New System.Drawing.Size(387, 581)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Pink
+        Me.Label12.Location = New System.Drawing.Point(2, 262)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(205, 22)
+        Me.Label12.TabIndex = 25
+        Me.Label12.Text = "Verificar Contraseña:"
+        '
+        'TbVerify
+        '
+        Me.TbVerify.Location = New System.Drawing.Point(208, 265)
+        Me.TbVerify.Name = "TbVerify"
+        Me.TbVerify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TbVerify.Size = New System.Drawing.Size(168, 20)
+        Me.TbVerify.TabIndex = 24
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Pink
+        Me.Label11.Location = New System.Drawing.Point(1, 391)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(205, 22)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Número de Teléfono: "
+        '
+        'TbNumero
+        '
+        Me.TbNumero.Location = New System.Drawing.Point(207, 395)
+        Me.TbNumero.Name = "TbNumero"
+        Me.TbNumero.Size = New System.Drawing.Size(168, 20)
+        Me.TbNumero.TabIndex = 22
         '
         'BtVolver
         '
@@ -105,7 +144,7 @@ Partial Class Empleados
         Me.BtVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtVolver.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtVolver.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtVolver.Location = New System.Drawing.Point(6, 433)
+        Me.BtVolver.Location = New System.Drawing.Point(5, 499)
         Me.BtVolver.Name = "BtVolver"
         Me.BtVolver.Size = New System.Drawing.Size(81, 36)
         Me.BtVolver.TabIndex = 11
@@ -139,7 +178,7 @@ Partial Class Empleados
         Me.RdVendedor.AutoSize = True
         Me.RdVendedor.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdVendedor.ForeColor = System.Drawing.Color.Pink
-        Me.RdVendedor.Location = New System.Drawing.Point(200, 406)
+        Me.RdVendedor.Location = New System.Drawing.Point(207, 465)
         Me.RdVendedor.Name = "RdVendedor"
         Me.RdVendedor.Size = New System.Drawing.Size(90, 21)
         Me.RdVendedor.TabIndex = 19
@@ -152,7 +191,7 @@ Partial Class Empleados
         Me.RdAdmin.AutoSize = True
         Me.RdAdmin.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RdAdmin.ForeColor = System.Drawing.Color.Pink
-        Me.RdAdmin.Location = New System.Drawing.Point(200, 379)
+        Me.RdAdmin.Location = New System.Drawing.Point(207, 438)
         Me.RdAdmin.Name = "RdAdmin"
         Me.RdAdmin.Size = New System.Drawing.Size(116, 21)
         Me.RdAdmin.TabIndex = 18
@@ -165,7 +204,7 @@ Partial Class Empleados
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Pink
-        Me.Label8.Location = New System.Drawing.Point(2, 340)
+        Me.Label8.Location = New System.Drawing.Point(1, 366)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(164, 22)
         Me.Label8.TabIndex = 17
@@ -176,7 +215,7 @@ Partial Class Empleados
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Pink
-        Me.Label7.Location = New System.Drawing.Point(2, 262)
+        Me.Label7.Location = New System.Drawing.Point(1, 288)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(179, 22)
         Me.Label7.TabIndex = 16
@@ -187,7 +226,7 @@ Partial Class Empleados
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Pink
-        Me.Label6.Location = New System.Drawing.Point(2, 314)
+        Me.Label6.Location = New System.Drawing.Point(1, 340)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(150, 22)
         Me.Label6.TabIndex = 15
@@ -198,7 +237,7 @@ Partial Class Empleados
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Pink
-        Me.Label5.Location = New System.Drawing.Point(2, 288)
+        Me.Label5.Location = New System.Drawing.Point(1, 314)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(192, 22)
         Me.Label5.TabIndex = 14
@@ -209,7 +248,7 @@ Partial Class Empleados
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Pink
-        Me.Label4.Location = New System.Drawing.Point(2, 376)
+        Me.Label4.Location = New System.Drawing.Point(1, 436)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(151, 22)
         Me.Label4.TabIndex = 13
@@ -243,7 +282,7 @@ Partial Class Empleados
         Me.BtGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtGuardar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtGuardar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtGuardar.Location = New System.Drawing.Point(200, 433)
+        Me.BtGuardar.Location = New System.Drawing.Point(199, 499)
         Me.BtGuardar.Name = "BtGuardar"
         Me.BtGuardar.Size = New System.Drawing.Size(168, 36)
         Me.BtGuardar.TabIndex = 11
@@ -252,7 +291,7 @@ Partial Class Empleados
         '
         'BtExaminar
         '
-        Me.BtExaminar.Location = New System.Drawing.Point(170, 167)
+        Me.BtExaminar.Location = New System.Drawing.Point(178, 166)
         Me.BtExaminar.Name = "BtExaminar"
         Me.BtExaminar.Size = New System.Drawing.Size(75, 23)
         Me.BtExaminar.TabIndex = 10
@@ -262,7 +301,7 @@ Partial Class Empleados
         'PbEmpleado
         '
         Me.PbEmpleado.BackColor = System.Drawing.Color.Pink
-        Me.PbEmpleado.Location = New System.Drawing.Point(267, 70)
+        Me.PbEmpleado.Location = New System.Drawing.Point(275, 69)
         Me.PbEmpleado.Name = "PbEmpleado"
         Me.PbEmpleado.Size = New System.Drawing.Size(77, 106)
         Me.PbEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -271,14 +310,14 @@ Partial Class Empleados
         '
         'TbEmail
         '
-        Me.TbEmail.Location = New System.Drawing.Point(200, 344)
+        Me.TbEmail.Location = New System.Drawing.Point(207, 369)
         Me.TbEmail.Name = "TbEmail"
         Me.TbEmail.Size = New System.Drawing.Size(168, 20)
         Me.TbEmail.TabIndex = 5
         '
         'TbCui
         '
-        Me.TbCui.Location = New System.Drawing.Point(200, 318)
+        Me.TbCui.Location = New System.Drawing.Point(207, 343)
         Me.TbCui.MaxLength = 13
         Me.TbCui.Name = "TbCui"
         Me.TbCui.Size = New System.Drawing.Size(168, 20)
@@ -286,28 +325,29 @@ Partial Class Empleados
         '
         'TbNombre
         '
-        Me.TbNombre.Location = New System.Drawing.Point(200, 292)
+        Me.TbNombre.Location = New System.Drawing.Point(207, 317)
         Me.TbNombre.Name = "TbNombre"
         Me.TbNombre.Size = New System.Drawing.Size(168, 20)
         Me.TbNombre.TabIndex = 3
         '
         'TbPuesto
         '
-        Me.TbPuesto.Location = New System.Drawing.Point(200, 266)
+        Me.TbPuesto.Location = New System.Drawing.Point(207, 291)
         Me.TbPuesto.Name = "TbPuesto"
         Me.TbPuesto.Size = New System.Drawing.Size(168, 20)
         Me.TbPuesto.TabIndex = 2
         '
         'TbPassword
         '
-        Me.TbPassword.Location = New System.Drawing.Point(200, 240)
+        Me.TbPassword.Location = New System.Drawing.Point(208, 239)
         Me.TbPassword.Name = "TbPassword"
+        Me.TbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TbPassword.Size = New System.Drawing.Size(168, 20)
         Me.TbPassword.TabIndex = 1
         '
         'TbUserName
         '
-        Me.TbUserName.Location = New System.Drawing.Point(200, 214)
+        Me.TbUserName.Location = New System.Drawing.Point(208, 213)
         Me.TbUserName.Name = "TbUserName"
         Me.TbUserName.Size = New System.Drawing.Size(168, 20)
         Me.TbUserName.TabIndex = 0
@@ -315,7 +355,7 @@ Partial Class Empleados
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(251, 56)
+        Me.PictureBox1.Location = New System.Drawing.Point(259, 55)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(109, 134)
         Me.PictureBox1.TabIndex = 21
@@ -323,6 +363,8 @@ Partial Class Empleados
         '
         'DTGempleados
         '
+        Me.DTGempleados.AllowUserToAddRows = False
+        Me.DTGempleados.AllowUserToDeleteRows = False
         Me.DTGempleados.BackgroundColor = System.Drawing.Color.Pink
         Me.DTGempleados.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DTGempleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -336,11 +378,11 @@ Partial Class Empleados
         Me.DTGempleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DTGempleados.ColumnHeadersHeight = 30
         Me.DTGempleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DTGempleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
         Me.DTGempleados.EnableHeadersVisualStyles = False
         Me.DTGempleados.GridColor = System.Drawing.Color.PaleVioletRed
         Me.DTGempleados.Location = New System.Drawing.Point(12, 40)
         Me.DTGempleados.Name = "DTGempleados"
+        Me.DTGempleados.ReadOnly = True
         Me.DTGempleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.Pink
@@ -358,36 +400,6 @@ Partial Class Empleados
         Me.DTGempleados.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DTGempleados.Size = New System.Drawing.Size(517, 345)
         Me.DTGempleados.TabIndex = 1
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ejemplo 1"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Column2"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Column3"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Column4"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Column5"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Column6"
-        Me.Column6.Name = "Column6"
         '
         'Label3
         '
@@ -448,7 +460,8 @@ Partial Class Empleados
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
-        Me.ClientSize = New System.Drawing.Size(920, 464)
+        Me.ClientSize = New System.Drawing.Size(929, 529)
+        Me.ControlBox = False
         Me.Controls.Add(Me.BtNuevo)
         Me.Controls.Add(Me.BtEliminar)
         Me.Controls.Add(Me.BtEditar)
@@ -473,12 +486,6 @@ Partial Class Empleados
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DTGempleados As DataGridView
     Friend WithEvents Label3 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents BtExaminar As Button
     Friend WithEvents PbEmpleado As PictureBox
     Friend WithEvents TbEmail As TextBox
@@ -505,4 +512,8 @@ Partial Class Empleados
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents BtVolver As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TbNumero As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents TbVerify As TextBox
 End Class

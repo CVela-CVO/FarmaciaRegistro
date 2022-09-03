@@ -3,6 +3,13 @@ Public Class Distribuidoras
     Dim index As Integer
     Dim iddeptoscombobox As String
     Dim stringindex As String
+    Sub cleartxt()
+        TbNombre.Clear()
+        TbDireccion.Clear()
+        TbNumero.Clear()
+        stringindex = ""
+        iddeptoscombobox = ""
+    End Sub
     Sub guardardatos()
         Try
             indexdepto()
@@ -21,6 +28,7 @@ Public Class Distribuidoras
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch ex As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -116,6 +124,7 @@ Public Class Distribuidoras
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch ex As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -143,6 +152,7 @@ Public Class Distribuidoras
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch EX As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

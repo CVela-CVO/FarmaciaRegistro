@@ -4,6 +4,11 @@ Public Class Marcas
     Dim idpaisescombobox As String
     Dim stringindex As String
     Dim direccionimagen As String
+    Sub cleartxt()
+        TbNombre.Clear()
+        direccionimagen = ""
+        stringindex = ""
+    End Sub
     Sub guardardatos()
 
         indexpaises()
@@ -11,17 +16,18 @@ Public Class Marcas
             MessageBox.Show("No ingresó los datos completos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
-                Dim conn As New MySqlConnection(cadenaConexion)
-                Dim da As MySqlDataAdapter
-                Dim dt As DataTable
-                conn.Open()
+            Dim conn As New MySqlConnection(cadenaConexion)
+            Dim da As MySqlDataAdapter
+            Dim dt As DataTable
+            conn.Open()
             Dim sQuery = "INSERT INTO marca (name_marca, id_paises, ico_marca) VALUES ('" & TbNombre.Text & "'," & idpaisescombobox & ",'" & direccionimagen & "');"
             da = New MySqlDataAdapter(sQuery, conn)
-                dt = New DataTable
-                da.Fill(dt)
-                conn.Close()
-                ReadQuery()
-            End If
+            dt = New DataTable
+            da.Fill(dt)
+            conn.Close()
+            ReadQuery()
+            cleartxt()
+        End If
 
     End Sub
     Sub indexpaises()
@@ -116,6 +122,7 @@ Public Class Marcas
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch ex As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -146,6 +153,7 @@ Public Class Marcas
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch ex As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

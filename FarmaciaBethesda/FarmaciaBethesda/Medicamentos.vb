@@ -9,6 +9,23 @@ Public Class Medicamentos
     Dim idmarcacombobox As String
     Dim iddistribcombobox As String
     Dim fechasql As String
+    Sub cleartxt()
+        TbNombre.Clear()
+        TbObservacion.Clear()
+        NUDcosto.Value = 0.1
+        NUDexistencias.Value = 0.1
+        NUDprecio.Value = 0.1
+        DateTimePicker1.Refresh()
+        direccionimagen = ""
+        costomedic = ""
+        preciomedic = ""
+        existenciasmedic = ""
+        stringindex = ""
+        idmarcacombobox = ""
+        iddistribcombobox = ""
+        idmarcacombobox = ""
+        fechasql = ""
+    End Sub
     Sub dateformato()
         fechasql = DateTimePicker1.Value.Year & "-" & DateTimePicker1.Value.Month & "-" & DateTimePicker1.Value.Day
     End Sub
@@ -32,6 +49,7 @@ Public Class Medicamentos
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch ex As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -128,11 +146,7 @@ Public Class Medicamentos
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+
     Private Sub BtExaminar_Click(sender As Object, e As EventArgs) Handles BtExaminar.Click
         Try
             OpenFileDialog1.ShowDialog()
@@ -168,12 +182,13 @@ Public Class Medicamentos
                 Dim da As MySqlDataAdapter
                 Dim dt As DataTable
                 conn.Open()
-                Dim sQuery = "UPDATE medicamento SET name_medicamento='" & TbNombre.Text & "',id_marca=" & idmarcacombobox & ",`fechacad_medicamento`='" & fechasql & "',obs_medicamento='" & TbObservacion.Text & "',id_distribuidora=" & idmarcacombobox & ",precio_medicamento='" & Convert.ToString(NUDprecio.Value) & "',costo_medicamento='" & Convert.ToString(NUDprecio.Value) & "',medica_existencias='" & Convert.ToString(NUDexistencias.Value) & "',img_medicamento='" & direccionimagen & "' WHERE 1"
+                Dim sQuery = "UPDATE medicamento SET name_medicamento='" & TbNombre.Text & "',id_marca=" & idmarcacombobox & ",`fechacad_medicamento`='" & fechasql & "',obs_medicamento='" & TbObservacion.Text & "',id_distribuidora=" & idmarcacombobox & ",precio_medicamento='" & Convert.ToString(NUDprecio.Value) & "',costo_medicamento='" & Convert.ToString(NUDprecio.Value) & "',medica_existencias='" & Convert.ToString(NUDexistencias.Value) & "',img_medicamento='" & direccionimagen & "' WHERE id_medicamento=" & stringindex
                 da = New MySqlDataAdapter(sQuery, conn)
                 dt = New DataTable
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch ex As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -216,6 +231,7 @@ Public Class Medicamentos
                 da.Fill(dt)
                 conn.Close()
                 ReadQuery()
+                cleartxt()
             End If
         Catch EX As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

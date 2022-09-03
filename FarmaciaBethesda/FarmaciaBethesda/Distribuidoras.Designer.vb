@@ -182,6 +182,8 @@ Partial Class Distribuidoras
         '
         'DTGmarcas
         '
+        Me.DTGmarcas.AllowUserToAddRows = False
+        Me.DTGmarcas.AllowUserToDeleteRows = False
         Me.DTGmarcas.BackgroundColor = System.Drawing.Color.Pink
         Me.DTGmarcas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DTGmarcas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -199,6 +201,7 @@ Partial Class Distribuidoras
         Me.DTGmarcas.GridColor = System.Drawing.Color.PaleVioletRed
         Me.DTGmarcas.Location = New System.Drawing.Point(12, 30)
         Me.DTGmarcas.Name = "DTGmarcas"
+        Me.DTGmarcas.ReadOnly = True
         Me.DTGmarcas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.Pink
@@ -277,6 +280,7 @@ Partial Class Distribuidoras
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(801, 279)
+        Me.ControlBox = False
         Me.Controls.Add(Me.BtEliminar)
         Me.Controls.Add(Me.BtNuevo)
         Me.Controls.Add(Me.BtEditar)

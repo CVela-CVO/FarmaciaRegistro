@@ -10,7 +10,7 @@ Public Class Login
         Dim da As MySqlDataAdapter
         Dim dt As DataTable
         conn.Open()
-        Dim sQuery = "SELECT usertype FROM usuarios WHERE username = '" & TbUsuario.Text & "' AND `userpass` = '" & nuevaclave & "';"
+        Dim sQuery = "SELECT usertype FROM usuarios WHERE username = '" & TbUsuario.Text & "';"
         da = New MySqlDataAdapter(sQuery, conn)
         dt = New DataTable
         da.Fill(dt)
