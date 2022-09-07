@@ -24,8 +24,17 @@ Partial Class Ventas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtRegistr = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LbSubtot = New System.Windows.Forms.ListBox()
+        Me.LbCant = New System.Windows.Forms.ListBox()
+        Me.LbProd = New System.Windows.Forms.ListBox()
         Me.BtVolver = New System.Windows.Forms.Button()
         Me.BtAgregar = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -41,51 +50,41 @@ Partial Class Ventas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.BtCliente = New System.Windows.Forms.Button()
-        Me.BtAceptar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtEliminar = New System.Windows.Forms.Button()
-        Me.LbProd = New System.Windows.Forms.ListBox()
-        Me.LbCant = New System.Windows.Forms.ListBox()
-        Me.LbSubtot = New System.Windows.Forms.ListBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.BtRegistr = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DTPinicio = New System.Windows.Forms.DateTimePicker()
-        Me.DTPfin = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Btbuscar = New System.Windows.Forms.Button()
-        Me.BtEli = New System.Windows.Forms.Button()
+        Me.BtAceptar = New System.Windows.Forms.Button()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.BtFactura = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.BtEditar = New System.Windows.Forms.Button()
-        Me.BtNuevo = New System.Windows.Forms.Button()
-        Me.BtDelete = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.BtEli = New System.Windows.Forms.Button()
+        Me.Btbuscar = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DTPfin = New System.Windows.Forms.DateTimePicker()
+        Me.DTPinicio = New System.Windows.Forms.DateTimePicker()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.BtDelete = New System.Windows.Forms.Button()
+        Me.BtNuevo = New System.Windows.Forms.Button()
+        Me.BtEditar = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.TbProducto = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -99,24 +98,6 @@ Partial Class Ventas
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(618, 695)
         Me.TabControl1.TabIndex = 0
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.Color.LightPink
-        Me.TabPage2.Controls.Add(Me.BtFactura)
-        Me.TabPage2.Controls.Add(Me.BtEli)
-        Me.TabPage2.Controls.Add(Me.Btbuscar)
-        Me.TabPage2.Controls.Add(Me.Label11)
-        Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Controls.Add(Me.DTPfin)
-        Me.TabPage2.Controls.Add(Me.DTPinicio)
-        Me.TabPage2.Controls.Add(Me.DataGridView1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(610, 669)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Listado"
         '
         'TabPage1
         '
@@ -144,6 +125,120 @@ Partial Class Ventas
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Mantenimiento"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.GroupBox2.Controls.Add(Me.TbProducto)
+        Me.GroupBox2.Controls.Add(Me.BtRegistr)
+        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.LbSubtot)
+        Me.GroupBox2.Controls.Add(Me.LbCant)
+        Me.GroupBox2.Controls.Add(Me.LbProd)
+        Me.GroupBox2.Location = New System.Drawing.Point(-16, 392)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(662, 333)
+        Me.GroupBox2.TabIndex = 51
+        Me.GroupBox2.TabStop = False
+        '
+        'BtRegistr
+        '
+        Me.BtRegistr.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtRegistr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtRegistr.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtRegistr.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtRegistr.Location = New System.Drawing.Point(32, 191)
+        Me.BtRegistr.Name = "BtRegistr"
+        Me.BtRegistr.Size = New System.Drawing.Size(216, 34)
+        Me.BtRegistr.TabIndex = 52
+        Me.BtRegistr.Text = "Registrar productos"
+        Me.BtRegistr.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Info
+        Me.Button1.Location = New System.Drawing.Point(32, 232)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(216, 31)
+        Me.Button1.TabIndex = 52
+        Me.Button1.Text = "Buscar Producto"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Pink
+        Me.Label7.Location = New System.Drawing.Point(266, 175)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(100, 22)
+        Me.Label7.TabIndex = 54
+        Me.Label7.Text = "Producto:"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(32, 165)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(187, 20)
+        Me.TextBox4.TabIndex = 3
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(391, 205)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(171, 20)
+        Me.NumericUpDown1.TabIndex = 53
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Pink
+        Me.Label6.Location = New System.Drawing.Point(266, 200)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(75, 22)
+        Me.Label6.TabIndex = 52
+        Me.Label6.Text = "Monto:"
+        '
+        'LbSubtot
+        '
+        Me.LbSubtot.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbSubtot.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.LbSubtot.FormattingEnabled = True
+        Me.LbSubtot.ItemHeight = 17
+        Me.LbSubtot.Location = New System.Drawing.Point(418, 19)
+        Me.LbSubtot.Name = "LbSubtot"
+        Me.LbSubtot.Size = New System.Drawing.Size(187, 140)
+        Me.LbSubtot.TabIndex = 2
+        '
+        'LbCant
+        '
+        Me.LbCant.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbCant.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.LbCant.FormattingEnabled = True
+        Me.LbCant.ItemHeight = 17
+        Me.LbCant.Location = New System.Drawing.Point(225, 19)
+        Me.LbCant.Name = "LbCant"
+        Me.LbCant.Size = New System.Drawing.Size(187, 140)
+        Me.LbCant.TabIndex = 1
+        '
+        'LbProd
+        '
+        Me.LbProd.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbProd.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.LbProd.FormattingEnabled = True
+        Me.LbProd.ItemHeight = 17
+        Me.LbProd.Location = New System.Drawing.Point(32, 19)
+        Me.LbProd.Name = "LbProd"
+        Me.LbProd.Size = New System.Drawing.Size(187, 140)
+        Me.LbProd.TabIndex = 0
         '
         'BtVolver
         '
@@ -291,6 +386,145 @@ Partial Class Ventas
         Me.Label3.TabIndex = 32
         Me.Label3.Text = "Pedido"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.GroupBox1.Controls.Add(Me.BtEliminar)
+        Me.GroupBox1.Controls.Add(Me.BtAceptar)
+        Me.GroupBox1.Location = New System.Drawing.Point(430, -23)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(294, 442)
+        Me.GroupBox1.TabIndex = 31
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "GroupBox1"
+        '
+        'BtEliminar
+        '
+        Me.BtEliminar.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtEliminar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtEliminar.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtEliminar.Location = New System.Drawing.Point(11, 320)
+        Me.BtEliminar.Name = "BtEliminar"
+        Me.BtEliminar.Size = New System.Drawing.Size(105, 34)
+        Me.BtEliminar.TabIndex = 53
+        Me.BtEliminar.Text = "Eliminar"
+        Me.BtEliminar.UseVisualStyleBackColor = False
+        '
+        'BtAceptar
+        '
+        Me.BtAceptar.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtAceptar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtAceptar.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtAceptar.Location = New System.Drawing.Point(11, 360)
+        Me.BtAceptar.Name = "BtAceptar"
+        Me.BtAceptar.Size = New System.Drawing.Size(105, 34)
+        Me.BtAceptar.TabIndex = 31
+        Me.BtAceptar.Text = "Aceptar"
+        Me.BtAceptar.UseVisualStyleBackColor = False
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.Color.LightPink
+        Me.TabPage2.Controls.Add(Me.BtFactura)
+        Me.TabPage2.Controls.Add(Me.BtEli)
+        Me.TabPage2.Controls.Add(Me.Btbuscar)
+        Me.TabPage2.Controls.Add(Me.Label11)
+        Me.TabPage2.Controls.Add(Me.Label1)
+        Me.TabPage2.Controls.Add(Me.DTPfin)
+        Me.TabPage2.Controls.Add(Me.DTPinicio)
+        Me.TabPage2.Controls.Add(Me.DataGridView1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(610, 669)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Listado"
+        '
+        'BtFactura
+        '
+        Me.BtFactura.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtFactura.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtFactura.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtFactura.Location = New System.Drawing.Point(157, 270)
+        Me.BtFactura.Name = "BtFactura"
+        Me.BtFactura.Size = New System.Drawing.Size(105, 34)
+        Me.BtFactura.TabIndex = 34
+        Me.BtFactura.Text = "Factura"
+        Me.BtFactura.UseVisualStyleBackColor = False
+        '
+        'BtEli
+        '
+        Me.BtEli.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtEli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtEli.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtEli.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtEli.Location = New System.Drawing.Point(34, 270)
+        Me.BtEli.Name = "BtEli"
+        Me.BtEli.Size = New System.Drawing.Size(105, 34)
+        Me.BtEli.TabIndex = 33
+        Me.BtEli.Text = "Eliminar"
+        Me.BtEli.UseVisualStyleBackColor = False
+        '
+        'Btbuscar
+        '
+        Me.Btbuscar.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.Btbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btbuscar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btbuscar.ForeColor = System.Drawing.SystemColors.Info
+        Me.Btbuscar.Location = New System.Drawing.Point(390, 22)
+        Me.Btbuscar.Name = "Btbuscar"
+        Me.Btbuscar.Size = New System.Drawing.Size(105, 34)
+        Me.Btbuscar.TabIndex = 32
+        Me.Btbuscar.Text = "Buscar"
+        Me.Btbuscar.UseVisualStyleBackColor = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.Info
+        Me.Label11.Location = New System.Drawing.Point(30, 48)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(94, 22)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Fecha fin"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Info
+        Me.Label1.Location = New System.Drawing.Point(30, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(118, 22)
+        Me.Label1.TabIndex = 30
+        Me.Label1.Text = "Fecha inicio"
+        '
+        'DTPfin
+        '
+        Me.DTPfin.Location = New System.Drawing.Point(184, 50)
+        Me.DTPfin.Name = "DTPfin"
+        Me.DTPfin.Size = New System.Drawing.Size(200, 20)
+        Me.DTPfin.TabIndex = 2
+        '
+        'DTPinicio
+        '
+        Me.DTPinicio.Location = New System.Drawing.Point(184, 22)
+        Me.DTPinicio.Name = "DTPinicio"
+        Me.DTPinicio.Size = New System.Drawing.Size(200, 20)
+        Me.DTPinicio.TabIndex = 1
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(34, 97)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(529, 167)
+        Me.DataGridView1.TabIndex = 0
+        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.LightPink
@@ -314,296 +548,88 @@ Partial Class Ventas
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Clientes"
         '
-        'Button1
+        'Label16
         '
-        Me.Button1.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.Info
-        Me.Button1.Location = New System.Drawing.Point(32, 232)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(216, 31)
-        Me.Button1.TabIndex = 52
-        Me.Button1.Text = "Buscar Producto"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.Label16.Location = New System.Drawing.Point(6, 383)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(101, 22)
+        Me.Label16.TabIndex = 40
+        Me.Label16.Text = "Dirección:"
         '
-        'BtCliente
+        'Label15
         '
-        Me.BtCliente.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtCliente.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtCliente.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtCliente.Location = New System.Drawing.Point(10, 61)
-        Me.BtCliente.Name = "BtCliente"
-        Me.BtCliente.Size = New System.Drawing.Size(106, 74)
-        Me.BtCliente.TabIndex = 51
-        Me.BtCliente.Text = "Buscar cliente"
-        Me.BtCliente.UseVisualStyleBackColor = False
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.Label15.Location = New System.Drawing.Point(6, 357)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(199, 22)
+        Me.Label15.TabIndex = 39
+        Me.Label15.Text = "Numero de telefono:"
         '
-        'BtAceptar
+        'Label14
         '
-        Me.BtAceptar.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtAceptar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtAceptar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtAceptar.Location = New System.Drawing.Point(11, 360)
-        Me.BtAceptar.Name = "BtAceptar"
-        Me.BtAceptar.Size = New System.Drawing.Size(105, 34)
-        Me.BtAceptar.TabIndex = 31
-        Me.BtAceptar.Text = "Aceptar"
-        Me.BtAceptar.UseVisualStyleBackColor = False
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.Label14.Location = New System.Drawing.Point(6, 331)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(42, 22)
+        Me.Label14.TabIndex = 38
+        Me.Label14.Text = "NIT:"
         '
-        'GroupBox1
+        'Label13
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.GroupBox1.Controls.Add(Me.BtEliminar)
-        Me.GroupBox1.Controls.Add(Me.BtCliente)
-        Me.GroupBox1.Controls.Add(Me.BtAceptar)
-        Me.GroupBox1.Location = New System.Drawing.Point(430, -23)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(294, 442)
-        Me.GroupBox1.TabIndex = 31
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.Label13.Location = New System.Drawing.Point(6, 305)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(89, 22)
+        Me.Label13.TabIndex = 37
+        Me.Label13.Text = "Nombre:"
         '
-        'BtEliminar
+        'TextBox9
         '
-        Me.BtEliminar.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtEliminar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtEliminar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtEliminar.Location = New System.Drawing.Point(11, 320)
-        Me.BtEliminar.Name = "BtEliminar"
-        Me.BtEliminar.Size = New System.Drawing.Size(105, 34)
-        Me.BtEliminar.TabIndex = 53
-        Me.BtEliminar.Text = "Eliminar"
-        Me.BtEliminar.UseVisualStyleBackColor = False
+        Me.TextBox9.Location = New System.Drawing.Point(206, 387)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(216, 20)
+        Me.TextBox9.TabIndex = 36
         '
-        'LbProd
+        'TextBox7
         '
-        Me.LbProd.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbProd.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.LbProd.FormattingEnabled = True
-        Me.LbProd.ItemHeight = 17
-        Me.LbProd.Location = New System.Drawing.Point(32, 19)
-        Me.LbProd.Name = "LbProd"
-        Me.LbProd.Size = New System.Drawing.Size(187, 140)
-        Me.LbProd.TabIndex = 0
+        Me.TextBox7.Location = New System.Drawing.Point(206, 361)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(216, 20)
+        Me.TextBox7.TabIndex = 35
         '
-        'LbCant
+        'TextBox6
         '
-        Me.LbCant.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbCant.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.LbCant.FormattingEnabled = True
-        Me.LbCant.ItemHeight = 17
-        Me.LbCant.Location = New System.Drawing.Point(225, 19)
-        Me.LbCant.Name = "LbCant"
-        Me.LbCant.Size = New System.Drawing.Size(187, 140)
-        Me.LbCant.TabIndex = 1
+        Me.TextBox6.Location = New System.Drawing.Point(206, 335)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(216, 20)
+        Me.TextBox6.TabIndex = 34
         '
-        'LbSubtot
+        'TextBox5
         '
-        Me.LbSubtot.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbSubtot.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.LbSubtot.FormattingEnabled = True
-        Me.LbSubtot.ItemHeight = 17
-        Me.LbSubtot.Location = New System.Drawing.Point(418, 19)
-        Me.LbSubtot.Name = "LbSubtot"
-        Me.LbSubtot.Size = New System.Drawing.Size(187, 140)
-        Me.LbSubtot.TabIndex = 2
+        Me.TextBox5.Location = New System.Drawing.Point(206, 309)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(216, 20)
+        Me.TextBox5.TabIndex = 33
         '
-        'TextBox4
+        'Label12
         '
-        Me.TextBox4.Location = New System.Drawing.Point(32, 165)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox4.TabIndex = 3
-        '
-        'BtRegistr
-        '
-        Me.BtRegistr.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtRegistr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtRegistr.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtRegistr.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtRegistr.Location = New System.Drawing.Point(32, 191)
-        Me.BtRegistr.Name = "BtRegistr"
-        Me.BtRegistr.Size = New System.Drawing.Size(216, 34)
-        Me.BtRegistr.TabIndex = 52
-        Me.BtRegistr.Text = "Registrar productos"
-        Me.BtRegistr.UseVisualStyleBackColor = False
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.BtRegistr)
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown1)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.LbSubtot)
-        Me.GroupBox2.Controls.Add(Me.LbCant)
-        Me.GroupBox2.Controls.Add(Me.LbProd)
-        Me.GroupBox2.Location = New System.Drawing.Point(-16, 392)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(662, 333)
-        Me.GroupBox2.TabIndex = 51
-        Me.GroupBox2.TabStop = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(391, 179)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(171, 21)
-        Me.ComboBox1.TabIndex = 55
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Pink
-        Me.Label7.Location = New System.Drawing.Point(266, 175)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 22)
-        Me.Label7.TabIndex = 54
-        Me.Label7.Text = "Producto:"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(391, 205)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(171, 20)
-        Me.NumericUpDown1.TabIndex = 53
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Pink
-        Me.Label6.Location = New System.Drawing.Point(266, 200)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 22)
-        Me.Label6.TabIndex = 52
-        Me.Label6.Text = "Monto:"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(34, 97)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(529, 167)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'DTPinicio
-        '
-        Me.DTPinicio.Location = New System.Drawing.Point(184, 22)
-        Me.DTPinicio.Name = "DTPinicio"
-        Me.DTPinicio.Size = New System.Drawing.Size(200, 20)
-        Me.DTPinicio.TabIndex = 1
-        '
-        'DTPfin
-        '
-        Me.DTPfin.Location = New System.Drawing.Point(184, 50)
-        Me.DTPfin.Name = "DTPfin"
-        Me.DTPfin.Size = New System.Drawing.Size(200, 20)
-        Me.DTPfin.TabIndex = 2
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Info
-        Me.Label1.Location = New System.Drawing.Point(30, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 22)
-        Me.Label1.TabIndex = 30
-        Me.Label1.Text = "Fecha inicio"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.Info
-        Me.Label11.Location = New System.Drawing.Point(30, 48)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(94, 22)
-        Me.Label11.TabIndex = 31
-        Me.Label11.Text = "Fecha fin"
-        '
-        'Btbuscar
-        '
-        Me.Btbuscar.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.Btbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btbuscar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btbuscar.ForeColor = System.Drawing.SystemColors.Info
-        Me.Btbuscar.Location = New System.Drawing.Point(390, 22)
-        Me.Btbuscar.Name = "Btbuscar"
-        Me.Btbuscar.Size = New System.Drawing.Size(105, 34)
-        Me.Btbuscar.TabIndex = 32
-        Me.Btbuscar.Text = "Buscar"
-        Me.Btbuscar.UseVisualStyleBackColor = False
-        '
-        'BtEli
-        '
-        Me.BtEli.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtEli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtEli.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtEli.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtEli.Location = New System.Drawing.Point(34, 270)
-        Me.BtEli.Name = "BtEli"
-        Me.BtEli.Size = New System.Drawing.Size(105, 34)
-        Me.BtEli.TabIndex = 33
-        Me.BtEli.Text = "Eliminar"
-        Me.BtEli.UseVisualStyleBackColor = False
-        '
-        'BtFactura
-        '
-        Me.BtFactura.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtFactura.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtFactura.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtFactura.Location = New System.Drawing.Point(157, 270)
-        Me.BtFactura.Name = "BtFactura"
-        Me.BtFactura.Size = New System.Drawing.Size(105, 34)
-        Me.BtFactura.TabIndex = 34
-        Me.BtFactura.Text = "Factura"
-        Me.BtFactura.UseVisualStyleBackColor = False
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(33, 56)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(549, 187)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'BtEditar
-        '
-        Me.BtEditar.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtEditar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtEditar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtEditar.Location = New System.Drawing.Point(33, 249)
-        Me.BtEditar.Name = "BtEditar"
-        Me.BtEditar.Size = New System.Drawing.Size(105, 34)
-        Me.BtEditar.TabIndex = 29
-        Me.BtEditar.Text = "Editar"
-        Me.BtEditar.UseVisualStyleBackColor = False
-        '
-        'BtNuevo
-        '
-        Me.BtNuevo.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BtNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtNuevo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtNuevo.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtNuevo.Location = New System.Drawing.Point(144, 249)
-        Me.BtNuevo.Name = "BtNuevo"
-        Me.BtNuevo.Size = New System.Drawing.Size(105, 34)
-        Me.BtNuevo.TabIndex = 30
-        Me.BtNuevo.Text = "Nuevo"
-        Me.BtNuevo.UseVisualStyleBackColor = False
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.SystemColors.Info
+        Me.Label12.Location = New System.Drawing.Point(29, 19)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(152, 22)
+        Me.Label12.TabIndex = 32
+        Me.Label12.Text = "Lista de clientes"
         '
         'BtDelete
         '
@@ -618,88 +644,46 @@ Partial Class Ventas
         Me.BtDelete.Text = "Eliminar"
         Me.BtDelete.UseVisualStyleBackColor = False
         '
-        'Label12
+        'BtNuevo
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.Info
-        Me.Label12.Location = New System.Drawing.Point(29, 19)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(152, 22)
-        Me.Label12.TabIndex = 32
-        Me.Label12.Text = "Lista de clientes"
+        Me.BtNuevo.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtNuevo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtNuevo.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtNuevo.Location = New System.Drawing.Point(144, 249)
+        Me.BtNuevo.Name = "BtNuevo"
+        Me.BtNuevo.Size = New System.Drawing.Size(105, 34)
+        Me.BtNuevo.TabIndex = 30
+        Me.BtNuevo.Text = "Nuevo"
+        Me.BtNuevo.UseVisualStyleBackColor = False
         '
-        'TextBox5
+        'BtEditar
         '
-        Me.TextBox5.Location = New System.Drawing.Point(206, 309)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(216, 20)
-        Me.TextBox5.TabIndex = 33
+        Me.BtEditar.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BtEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtEditar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtEditar.ForeColor = System.Drawing.SystemColors.Info
+        Me.BtEditar.Location = New System.Drawing.Point(33, 249)
+        Me.BtEditar.Name = "BtEditar"
+        Me.BtEditar.Size = New System.Drawing.Size(105, 34)
+        Me.BtEditar.TabIndex = 29
+        Me.BtEditar.Text = "Editar"
+        Me.BtEditar.UseVisualStyleBackColor = False
         '
-        'TextBox6
+        'DataGridView2
         '
-        Me.TextBox6.Location = New System.Drawing.Point(206, 335)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(216, 20)
-        Me.TextBox6.TabIndex = 34
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(33, 56)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(549, 187)
+        Me.DataGridView2.TabIndex = 0
         '
-        'TextBox7
+        'TbProducto
         '
-        Me.TextBox7.Location = New System.Drawing.Point(206, 361)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(216, 20)
-        Me.TextBox7.TabIndex = 35
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(206, 387)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(216, 20)
-        Me.TextBox9.TabIndex = 36
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.Label13.Location = New System.Drawing.Point(6, 305)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(89, 22)
-        Me.Label13.TabIndex = 37
-        Me.Label13.Text = "Nombre:"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.Label14.Location = New System.Drawing.Point(6, 331)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(42, 22)
-        Me.Label14.TabIndex = 38
-        Me.Label14.Text = "NIT:"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.Label15.Location = New System.Drawing.Point(6, 357)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(199, 22)
-        Me.Label15.TabIndex = 39
-        Me.Label15.Text = "Numero de telefono:"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.Label16.Location = New System.Drawing.Point(6, 383)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(101, 22)
-        Me.Label16.TabIndex = 40
-        Me.Label16.Text = "Dirección:"
+        Me.TbProducto.Location = New System.Drawing.Point(391, 176)
+        Me.TbProducto.Name = "TbProducto"
+        Me.TbProducto.Size = New System.Drawing.Size(171, 20)
+        Me.TbProducto.TabIndex = 55
         '
         'Ventas
         '
@@ -714,17 +698,17 @@ Partial Class Ventas
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ventas"
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -749,7 +733,6 @@ Partial Class Ventas
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents BtRegistr As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Label7 As Label
@@ -761,7 +744,6 @@ Partial Class Ventas
     Friend WithEvents LbProd As ListBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtEliminar As Button
-    Friend WithEvents BtCliente As Button
     Friend WithEvents BtAceptar As Button
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents DTPfin As DateTimePicker
@@ -785,4 +767,5 @@ Partial Class Ventas
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents TbProducto As TextBox
 End Class
