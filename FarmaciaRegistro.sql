@@ -16,32 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `clientes`
---
-
-DROP TABLE IF EXISTS `clientes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `clientes` (
-  `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
-  `name_cliente` varchar(80) NOT NULL,
-  `nit_cliente` varchar(11) NOT NULL,
-  `num_cliente` varchar(8) NOT NULL,
-  `dir_cliente` varchar(55) NOT NULL,
-  PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `clientes`
---
-
-LOCK TABLES `clientes` WRITE;
-/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `departamentos`
 --
 
@@ -82,7 +56,7 @@ CREATE TABLE `detalle_pedidos` (
   KEY `fk_medicapedido` (`id_medicamento`),
   CONSTRAINT `detalle_pedidos_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `detalle_pedidos_ibfk_2` FOREIGN KEY (`id_medicamento`) REFERENCES `medicamento` (`id_medicamento`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +65,7 @@ CREATE TABLE `detalle_pedidos` (
 
 LOCK TABLES `detalle_pedidos` WRITE;
 /*!40000 ALTER TABLE `detalle_pedidos` DISABLE KEYS */;
+INSERT INTO `detalle_pedidos` VALUES (4,11,17,4),(5,11,18,3),(6,12,17,7),(7,12,18,1);
 /*!40000 ALTER TABLE `detalle_pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +85,7 @@ CREATE TABLE `distribuidoras` (
   PRIMARY KEY (`id_distribuidora`),
   KEY `fk_departamento` (`id_departamento`),
   CONSTRAINT `distribuidoras_ibfk_1` FOREIGN KEY (`id_departamento`) REFERENCES `departamentos` (`id_departamento`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,6 +94,7 @@ CREATE TABLE `distribuidoras` (
 
 LOCK TABLES `distribuidoras` WRITE;
 /*!40000 ALTER TABLE `distribuidoras` DISABLE KEYS */;
+INSERT INTO `distribuidoras` VALUES (1,'Cela S.P.',15,'55889','Rural'),(3,'SA',1,'Ciudad','32432435');
 /*!40000 ALTER TABLE `distribuidoras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,12 +108,12 @@ DROP TABLE IF EXISTS `marca`;
 CREATE TABLE `marca` (
   `id_marca` int(11) NOT NULL AUTO_INCREMENT,
   `name_marca` varchar(100) NOT NULL,
-  `id_pais` int(11) NOT NULL,
+  `id_paises` int(11) NOT NULL,
   `ico_marca` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_marca`),
-  KEY `fk_paises` (`id_pais`),
-  CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`id_pais`) REFERENCES `paises` (`id_pais`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `fk_paises` (`id_paises`),
+  CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`id_paises`) REFERENCES `paises` (`id_pais`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,6 +122,7 @@ CREATE TABLE `marca` (
 
 LOCK TABLES `marca` WRITE;
 /*!40000 ALTER TABLE `marca` DISABLE KEYS */;
+INSERT INTO `marca` VALUES (2,'kkkk',29,'C:UsersgamegDocumentshqdefault.jpg');
 /*!40000 ALTER TABLE `marca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +149,7 @@ CREATE TABLE `medicamento` (
   KEY `fk-distribuidora` (`id_distribuidora`),
   CONSTRAINT `medicamento_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `medicamento_ibfk_2` FOREIGN KEY (`id_distribuidora`) REFERENCES `distribuidoras` (`id_distribuidora`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,6 +158,7 @@ CREATE TABLE `medicamento` (
 
 LOCK TABLES `medicamento` WRITE;
 /*!40000 ALTER TABLE `medicamento` DISABLE KEYS */;
+INSERT INTO `medicamento` VALUES (17,'Tylenol',2,'2022-08-29','Observ',1,'Q12','Q32','16','C:UsersgamegDesktop	areaPrograPrácticasdiagDataBase.PNG'),(18,'Atorvastatina',2,'2022-09-29','Lol',3,'782','322','29','no');
 /*!40000 ALTER TABLE `medicamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,17 +196,19 @@ DROP TABLE IF EXISTS `pedidos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pedidos` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
-  `id_cliente` int(11) NOT NULL,
+  `name_cliente` varchar(100) NOT NULL,
+  `nit_cliente` varchar(8) NOT NULL,
+  `num_cliente` varchar(8) NOT NULL,
+  `dir_cliente` varchar(80) NOT NULL,
   `fecha_pedido` date NOT NULL,
   `id_user` int(11) NOT NULL,
   `serie_pedido` varchar(100) NOT NULL,
+  `total_pedido` varchar(17) NOT NULL,
   PRIMARY KEY (`id_pedido`),
   UNIQUE KEY `id_pedido` (`id_pedido`),
   KEY `fk_user` (`id_user`),
-  KEY `fk_cliente` (`id_cliente`),
-  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,6 +217,7 @@ CREATE TABLE `pedidos` (
 
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+INSERT INTO `pedidos` VALUES (2,'dnjsd','fsdfsdsd','sdfsdsdf','dfsfds','2022-09-07',2,'aBHAy867','14013.44'),(3,'gfdgfd','dgfg','fgdfgdf','fgdg','2022-09-07',2,'BY86afv','1751.68'),(4,'dfddf','dfddf','dfdfdf','dfs','2022-09-07',2,'Aqui esta','1751.68'),(5,'bcvbvvbvbv','vvccv','cvc','dfdfdf','2022-09-07',2,'UGD7H','15765.12'),(6,'ffcfdfdffdf','dfffffff','dfdfd','fdf','2022-09-07',2,'curcurfffffffffffff','1751.68'),(7,'CaRLOS','fsdfds','fddfd','sddssd','2022-09-07',2,'ABYUSV','1751.68'),(8,'vcxcvcxvxc','cvvc','cvvcxv','cvxvxc','2022-09-07',2,'<huiUIGAI','1751.68'),(9,'dfd','dfdsdf','sdsdsd','sdsdsd','2022-09-07',2,'BH78G','12261.76'),(10,'dfsddfsd','ddsd','sdd','ddd','2022-09-07',2,'curfff','1751.68'),(11,'Carlos Eduardo','23124-4','35378433','Ciudad de Quetzaltenango','2022-09-04',2,'A2244','5255.04'),(12,'Carlos2','342423-5','34242343','Ciudad','2022-09-08',2,'GF7BS9','1751.68');
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +240,7 @@ CREATE TABLE `usuarios` (
   `correo_usuario` varchar(100) NOT NULL,
   `img_usuario` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,6 +249,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (2,'Admin2','+W1+cHVq+3lrtZtVSC/g4g==','Administrador','Carlos','72567326','6271552','Ingeniero','carlos@gmail.com','C:UsersgamegDocumentshqdefault.jpg'),(3,'Vendedor1','DwN1hMmef9T0+MWVUPj1Bw==','Vendedor','JC','328902','253656734','EMPLEADO','JC@gmail.com','C:UsersgamegDocumentshqdefault (1).jpg'),(4,'Vendedor2','zgv9FQWbaNZ2iIhNej0+jA==','Vendedor','Carlos2','215465156156','32343254','Vendedor','hola@gmail.com','C:UsersgamegDocumentshqdefault (1).jpg');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -284,4 +266,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-25 14:23:29
+-- Dump completed on 2022-09-08 12:11:33
