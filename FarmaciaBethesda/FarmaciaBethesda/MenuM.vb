@@ -42,4 +42,9 @@
             BtMarcas.Enabled = False
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        VistaVentas.Show()
+    End Sub
 End Class

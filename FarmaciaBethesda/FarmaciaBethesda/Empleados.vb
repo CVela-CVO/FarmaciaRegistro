@@ -7,7 +7,11 @@ Public Class Empleados
     Dim direccionimagen As String
     Dim tipouser As String
     Dim index As Integer
+    Dim direcciontemporal As String
     Dim stringindex As String
+    Dim columnabuscar As String
+    Dim datobuscar As String
+    Dim stringbuscar As String
     Sub cleartxt()
         TbNombre.Clear()
         TbCui.Clear()
@@ -18,11 +22,42 @@ Public Class Empleados
         TbUserName.Clear()
         TbVerify.Clear()
         direccionimagen = ""
+        PbEmpleado.Image = Nothing
         nuevaclave = ""
         tipouser = ""
         stringindex = ""
         RdAdmin.Checked = False
         RdAdmin.Checked = False
+    End Sub
+    Sub designbuscar()
+
+        If cbbuscar.Text = "Tipo" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE usertype LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "Nombre" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE nombre_user LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "Puesto" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE puesto_usuario LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "CUI" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE CUI_usuario LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "Email" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE correo_usuario LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "Telefono" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE num_usuario LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "" And tbbuscar.Text = "" Then
+            columnabuscar = ""
+            datobuscar = ""
+        ElseIf cbbuscar.Text <> "" And tbbuscar.Text = "" Then
+            MessageBox.Show("Debe ingresar un dato a buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        ElseIf cbbuscar.Text = "" And tbbuscar.Text <> "" Then
+            MessageBox.Show("Debe seleccionar la categoría del dato a buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
     End Sub
     Sub obtenertipo()
         If RdAdmin.Checked = True Then
@@ -64,7 +99,7 @@ Public Class Empleados
                     Dim da As MySqlDataAdapter
                     Dim dt As DataTable
                     conn.Open()
-                    Dim sQuery = "INSERT INTO usuarios (username, userpass, usertype, nombre_user, CUI_usuario, num_usuario, puesto_usuario, correo_usuario, img_usuario) VALUES ('" & TbUserName.Text & "','" & nuevaclave & "','" & tipouser & "','" & TbNombre.Text & "','" & TbCui.Text & "','" & TbNumero.Text & "','" & TbPuesto.Text & "','" & TbEmail.Text & "','" & direccionimagen & "');"
+                    Dim sQuery = "INSERT INTO usuarios (username, userpass, usertype, nombre_user, CUI_usuario, num_usuario, puesto_usuario, correo_usuario, img_usuario) VALUES ('" & TbUserName.Text & "','" & nuevaclave & "','" & tipouser & "','" & TbNombre.Text & "','" & TbCui.Text & "','" & TbNumero.Text & "','" & TbPuesto.Text & "','" & TbEmail.Text & "','" & direcciontemporal & "');"
                     da = New MySqlDataAdapter(sQuery, conn)
                     dt = New DataTable
                     da.Fill(dt)
@@ -79,16 +114,16 @@ Public Class Empleados
     Sub ReadQuery()
 
         Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
-            Dim conn As New MySqlConnection(cadenaConexion)
-            Dim da As MySqlDataAdapter
-            Dim dt As DataTable
-            conn.Open()
-            Dim sQuery = "SELECT id_user as 'ID', nombre_user as 'Nombre', CUI_usuario as 'CUI', num_usuario as 'Teléfono', puesto_usuario as 'Puesto', correo_usuario as 'Email', username as 'UserName', userpass as 'Contraseña Encriptada', usertype as 'Tipo de Usuario', img_usuario as 'Imagen' FROM usuarios;"
-            da = New MySqlDataAdapter(sQuery, conn)
-            dt = New DataTable
-            da.Fill(dt)
-            DTGempleados.DataSource = dt
-            conn.Close()
+        Dim conn As New MySqlConnection(cadenaConexion)
+        Dim da As MySqlDataAdapter
+        Dim dt As DataTable
+        conn.Open()
+        Dim sQuery = "SELECT id_user as 'ID', nombre_user as 'Nombre', CUI_usuario as 'CUI', num_usuario as 'Teléfono', puesto_usuario as 'Puesto', correo_usuario as 'Email', username as 'UserName', userpass as 'Contraseña Encriptada', usertype as 'Tipo de Usuario', img_usuario as 'Imagen' FROM usuarios;"
+        da = New MySqlDataAdapter(sQuery, conn)
+        dt = New DataTable
+        da.Fill(dt)
+        DTGempleados.DataSource = dt
+        conn.Close()
 
     End Sub
     Sub updatedata()
@@ -115,7 +150,7 @@ Public Class Empleados
                     Dim da As MySqlDataAdapter
                     Dim dt As DataTable
                     conn.Open()
-                    Dim sQuery = "UPDATE usuarios SET username='" & TbUserName.Text & "',userpass='" & nuevaclave & "',usertype='" & tipouser & "',nombre_user='" & TbNombre.Text & "',CUI='" & TbCui.Text & "',num_usuario='" & TbNumero.Text & "',puesto_usuario='" & TbPuesto.Text & "',correo_usuario='" & TbEmail.Text & "',img_usuario='" & direccionimagen & "' WHERE id_user=" & stringindex
+                    Dim sQuery = "UPDATE usuarios SET username='" & TbUserName.Text & "',userpass='" & nuevaclave & "',usertype='" & tipouser & "',nombre_user='" & TbNombre.Text & "',CUI_usuario='" & TbCui.Text & "',num_usuario='" & TbNumero.Text & "',puesto_usuario='" & TbPuesto.Text & "',correo_usuario='" & TbEmail.Text & "',img_usuario='" & direcciontemporal & "' WHERE id_user=" & stringindex
                     da = New MySqlDataAdapter(sQuery, conn)
                     dt = New DataTable
                     da.Fill(dt)
@@ -128,10 +163,26 @@ Public Class Empleados
 
     End Sub
     Private Sub BtExaminar_Click(sender As Object, e As EventArgs) Handles BtExaminar.Click
-        OpenFileDialog1.ShowDialog()
-        direccionimagen = OpenFileDialog1.FileName
-        PbEmpleado.Image = Image.FromFile(direccionimagen, True)
-        MessageBox.Show(direccionimagen)
+        Try
+            OpenFileDialog1.ShowDialog()
+            direccionimagen = OpenFileDialog1.FileName
+
+            Dim nuevacadena() As Char
+
+            nuevacadena = direccionimagen.ToCharArray()
+            For i = 0 To nuevacadena.Length - 1 Step 1
+                If nuevacadena(i) = "\" Then
+                    direcciontemporal = direcciontemporal & "\\"
+                Else
+                    direcciontemporal = direcciontemporal & nuevacadena(i)
+                End If
+            Next
+
+            PbEmpleado.Image = Image.FromFile(direccionimagen, True)
+
+        Catch ex As Exception
+            MessageBox.Show("Hubo un error al incorporar la ruta o formato de la imagen al programa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub BtVolver_Click(sender As Object, e As EventArgs) Handles BtVolver.Click
@@ -145,7 +196,7 @@ Public Class Empleados
     End Sub
 
     Private Sub DTGempleados_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGempleados.CellClick
-        Index = e.RowIndex
+        index = e.RowIndex
         Dim selectedrow As DataGridViewRow
         selectedrow = DTGempleados.Rows(index)
         stringindex = selectedrow.Cells(0).Value.ToString
@@ -165,23 +216,33 @@ Public Class Empleados
             RdVendedor.Checked = True
         End If
         direccionimagen = selectedrow.Cells(9).Value.ToString
+        Dim nuevacadena() As Char
+        nuevacadena = direccionimagen.ToCharArray()
+        For i = 0 To nuevacadena.Length - 1 Step 1
+            If nuevacadena(i) = "\" Then
+                direcciontemporal = direcciontemporal & "\\"
+            Else
+                direcciontemporal = direcciontemporal & nuevacadena(i)
+            End If
+        Next
+        PbEmpleado.Image = Image.FromFile(direccionimagen, True)
     End Sub
 
     Private Sub BtEliminar_Click(sender As Object, e As EventArgs) Handles BtEliminar.Click
 
         If String.IsNullOrEmpty(stringindex) Then
-                MessageBox.Show("Seleccione una fila de la tabla para eliminarla correctamente", "Error de tabla", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
-                Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
-                Dim conn As New MySqlConnection(cadenaConexion)
-                Dim da As MySqlDataAdapter
-                Dim dt As DataTable
-                conn.Open()
-                Dim sQuery = "DELETE FROM usuarios WHERE id_user =" & stringindex
-                da = New MySqlDataAdapter(sQuery, conn)
-                dt = New DataTable
-                da.Fill(dt)
-                conn.Close()
+            MessageBox.Show("Seleccione una fila de la tabla para eliminarla correctamente", "Error de tabla", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
+            Dim conn As New MySqlConnection(cadenaConexion)
+            Dim da As MySqlDataAdapter
+            Dim dt As DataTable
+            conn.Open()
+            Dim sQuery = "DELETE FROM usuarios WHERE id_user =" & stringindex
+            da = New MySqlDataAdapter(sQuery, conn)
+            dt = New DataTable
+            da.Fill(dt)
+            conn.Close()
             ReadQuery()
             cleartxt()
         End If
@@ -198,5 +259,25 @@ Public Class Empleados
 
     Private Sub BtNuevo_Click(sender As Object, e As EventArgs) Handles BtNuevo.Click
         guardardatos()
+    End Sub
+
+    Private Sub Btbuscar_Click(sender As Object, e As EventArgs) Handles Btbuscar.Click
+        designbuscar()
+        Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
+        Dim conn As New MySqlConnection(cadenaConexion)
+        Dim da As MySqlDataAdapter
+        Dim dt As DataTable
+        conn.Open()
+        Dim sQuery = "SELECT id_user as 'ID', nombre_user as 'Nombre', CUI_usuario as 'CUI', num_usuario as 'Teléfono', puesto_usuario as 'Puesto', correo_usuario as 'Email', username as 'UserName', userpass as 'Contraseña Encriptada', usertype as 'Tipo de Usuario', img_usuario as 'Imagen' FROM usuarios" + columnabuscar + datobuscar + ";"
+        da = New MySqlDataAdapter(sQuery, conn)
+        dt = New DataTable
+        da.Fill(dt)
+        DTGempleados.DataSource = dt
+        conn.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ReadQuery()
+        tbbuscar.Clear()
     End Sub
 End Class

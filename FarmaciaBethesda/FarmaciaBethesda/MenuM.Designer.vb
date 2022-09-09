@@ -34,6 +34,7 @@ Partial Class MenuM
         Me.BtUsuarios = New System.Windows.Forms.Button()
         Me.BtMarcas = New System.Windows.Forms.Button()
         Me.BtDistrib = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -71,9 +72,9 @@ Partial Class MenuM
         Me.BtVolver.ForeColor = System.Drawing.SystemColors.Info
         Me.BtVolver.Location = New System.Drawing.Point(19, 137)
         Me.BtVolver.Name = "BtVolver"
-        Me.BtVolver.Size = New System.Drawing.Size(105, 34)
+        Me.BtVolver.Size = New System.Drawing.Size(105, 65)
         Me.BtVolver.TabIndex = 5
-        Me.BtVolver.Text = "Volver"
+        Me.BtVolver.Text = "Cerrar Sesión"
         Me.BtVolver.UseVisualStyleBackColor = False
         '
         'PictureBox1
@@ -144,7 +145,7 @@ Partial Class MenuM
         Me.BtUsuarios.Name = "BtUsuarios"
         Me.BtUsuarios.Size = New System.Drawing.Size(157, 48)
         Me.BtUsuarios.TabIndex = 11
-        Me.BtUsuarios.Text = "Añadir usuario"
+        Me.BtUsuarios.Text = "Usuarios"
         Me.BtUsuarios.UseVisualStyleBackColor = False
         '
         'BtMarcas
@@ -173,12 +174,26 @@ Partial Class MenuM
         Me.BtDistrib.Text = "Distribuidoras"
         Me.BtDistrib.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Pink
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Info
+        Me.Button1.Location = New System.Drawing.Point(292, 189)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(157, 56)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Listado de Ventas"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'MenuM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(461, 261)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtDistrib)
         Me.Controls.Add(Me.BtMarcas)
         Me.Controls.Add(Me.BtUsuarios)
@@ -210,4 +225,5 @@ Partial Class MenuM
     Friend WithEvents BtUsuarios As Button
     Friend WithEvents BtMarcas As Button
     Friend WithEvents BtDistrib As Button
+    Friend WithEvents Button1 As Button
 End Class

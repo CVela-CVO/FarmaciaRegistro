@@ -106,7 +106,7 @@ Partial Class Login
         Me.BtLogout.Name = "BtLogout"
         Me.BtLogout.Size = New System.Drawing.Size(137, 34)
         Me.BtLogout.TabIndex = 5
-        Me.BtLogout.Text = "Log-Out"
+        Me.BtLogout.Text = "Salir"
         Me.BtLogout.UseVisualStyleBackColor = True
         '
         'Label3

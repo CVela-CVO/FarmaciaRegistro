@@ -23,9 +23,9 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TbVerify = New System.Windows.Forms.TextBox()
@@ -59,6 +59,12 @@ Partial Class Empleados
         Me.BtEditar = New System.Windows.Forms.Button()
         Me.BtEliminar = New System.Windows.Forms.Button()
         Me.BtNuevo = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Btbuscar = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.cbbuscar = New System.Windows.Forms.ComboBox()
+        Me.tbbuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PbEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -368,36 +374,36 @@ Partial Class Empleados
         Me.DTGempleados.BackgroundColor = System.Drawing.Color.Pink
         Me.DTGempleados.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DTGempleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Crimson
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DTGempleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Crimson
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DTGempleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DTGempleados.ColumnHeadersHeight = 30
         Me.DTGempleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DTGempleados.EnableHeadersVisualStyles = False
         Me.DTGempleados.GridColor = System.Drawing.Color.PaleVioletRed
-        Me.DTGempleados.Location = New System.Drawing.Point(12, 40)
+        Me.DTGempleados.Location = New System.Drawing.Point(12, 137)
         Me.DTGempleados.Name = "DTGempleados"
         Me.DTGempleados.ReadOnly = True
         Me.DTGempleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Pink
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DTGempleados.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Pink
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleVioletRed
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DTGempleados.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Pink
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DTGempleados.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Pink
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.PaleVioletRed
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.DTGempleados.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DTGempleados.Size = New System.Drawing.Size(517, 345)
         Me.DTGempleados.TabIndex = 1
         '
@@ -422,7 +428,7 @@ Partial Class Empleados
         Me.BtEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtEditar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtEditar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtEditar.Location = New System.Drawing.Point(12, 391)
+        Me.BtEditar.Location = New System.Drawing.Point(12, 488)
         Me.BtEditar.Name = "BtEditar"
         Me.BtEditar.Size = New System.Drawing.Size(105, 34)
         Me.BtEditar.TabIndex = 8
@@ -435,7 +441,7 @@ Partial Class Empleados
         Me.BtEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtEliminar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtEliminar.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtEliminar.Location = New System.Drawing.Point(234, 391)
+        Me.BtEliminar.Location = New System.Drawing.Point(234, 488)
         Me.BtEliminar.Name = "BtEliminar"
         Me.BtEliminar.Size = New System.Drawing.Size(105, 34)
         Me.BtEliminar.TabIndex = 9
@@ -448,12 +454,76 @@ Partial Class Empleados
         Me.BtNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtNuevo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtNuevo.ForeColor = System.Drawing.SystemColors.Info
-        Me.BtNuevo.Location = New System.Drawing.Point(123, 391)
+        Me.BtNuevo.Location = New System.Drawing.Point(123, 488)
         Me.BtNuevo.Name = "BtNuevo"
         Me.BtNuevo.Size = New System.Drawing.Size(105, 34)
         Me.BtNuevo.TabIndex = 10
         Me.BtNuevo.Text = "Nuevo"
         Me.BtNuevo.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Info
+        Me.Button1.Location = New System.Drawing.Point(327, 69)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(139, 50)
+        Me.Button1.TabIndex = 65
+        Me.Button1.Text = "Mostrar Todos"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label13.Location = New System.Drawing.Point(10, 96)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(91, 20)
+        Me.Label13.TabIndex = 64
+        Me.Label13.Text = "Buscar por:"
+        '
+        'Btbuscar
+        '
+        Me.Btbuscar.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.Btbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btbuscar.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btbuscar.ForeColor = System.Drawing.SystemColors.Info
+        Me.Btbuscar.Location = New System.Drawing.Point(234, 69)
+        Me.Btbuscar.Name = "Btbuscar"
+        Me.Btbuscar.Size = New System.Drawing.Size(87, 50)
+        Me.Btbuscar.TabIndex = 63
+        Me.Btbuscar.Text = "Buscar"
+        Me.Btbuscar.UseVisualStyleBackColor = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label14.Location = New System.Drawing.Point(10, 67)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(62, 20)
+        Me.Label14.TabIndex = 62
+        Me.Label14.Text = "Buscar:"
+        '
+        'cbbuscar
+        '
+        Me.cbbuscar.FormattingEnabled = True
+        Me.cbbuscar.Items.AddRange(New Object() {"Tipo", "Nombre", "Puesto", "CUI", "Email", "Telefono"})
+        Me.cbbuscar.Location = New System.Drawing.Point(107, 98)
+        Me.cbbuscar.Name = "cbbuscar"
+        Me.cbbuscar.Size = New System.Drawing.Size(121, 21)
+        Me.cbbuscar.TabIndex = 61
+        '
+        'tbbuscar
+        '
+        Me.tbbuscar.Location = New System.Drawing.Point(107, 69)
+        Me.tbbuscar.Name = "tbbuscar"
+        Me.tbbuscar.Size = New System.Drawing.Size(121, 20)
+        Me.tbbuscar.TabIndex = 60
         '
         'Empleados
         '
@@ -462,6 +532,12 @@ Partial Class Empleados
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(929, 529)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Btbuscar)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.cbbuscar)
+        Me.Controls.Add(Me.tbbuscar)
         Me.Controls.Add(Me.BtNuevo)
         Me.Controls.Add(Me.BtEliminar)
         Me.Controls.Add(Me.BtEditar)
@@ -516,4 +592,10 @@ Partial Class Empleados
     Friend WithEvents TbNumero As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents TbVerify As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Btbuscar As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents cbbuscar As ComboBox
+    Friend WithEvents tbbuscar As TextBox
 End Class

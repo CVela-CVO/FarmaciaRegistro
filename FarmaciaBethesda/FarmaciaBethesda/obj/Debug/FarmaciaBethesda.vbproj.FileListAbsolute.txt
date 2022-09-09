@@ -75,3 +75,5 @@ F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\
 F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Ventas.resources
 F:\Elden Ring\FarmaciaRegistro-main\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.vbproj.GenerateResource.Cache
 C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.BuscarProductos.resources
+C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.VistaVentas.resources
+C:\Users\gameg\Desktop\tarea\Progra\Programación\Prácticas\FarmaciaRegistro\FarmaciaBethesda\FarmaciaBethesda\obj\Debug\FarmaciaBethesda.Factura.resources

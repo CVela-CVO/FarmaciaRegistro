@@ -65,7 +65,6 @@ CREATE TABLE `detalle_pedidos` (
 
 LOCK TABLES `detalle_pedidos` WRITE;
 /*!40000 ALTER TABLE `detalle_pedidos` DISABLE KEYS */;
-INSERT INTO `detalle_pedidos` VALUES (4,11,17,4),(5,11,18,3),(6,12,17,7),(7,12,18,1);
 /*!40000 ALTER TABLE `detalle_pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +93,6 @@ CREATE TABLE `distribuidoras` (
 
 LOCK TABLES `distribuidoras` WRITE;
 /*!40000 ALTER TABLE `distribuidoras` DISABLE KEYS */;
-INSERT INTO `distribuidoras` VALUES (1,'Cela S.P.',15,'55889','Rural'),(3,'SA',1,'Ciudad','32432435');
 /*!40000 ALTER TABLE `distribuidoras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +111,7 @@ CREATE TABLE `marca` (
   PRIMARY KEY (`id_marca`),
   KEY `fk_paises` (`id_paises`),
   CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`id_paises`) REFERENCES `paises` (`id_pais`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +120,6 @@ CREATE TABLE `marca` (
 
 LOCK TABLES `marca` WRITE;
 /*!40000 ALTER TABLE `marca` DISABLE KEYS */;
-INSERT INTO `marca` VALUES (2,'kkkk',29,'C:UsersgamegDocumentshqdefault.jpg');
 /*!40000 ALTER TABLE `marca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +146,7 @@ CREATE TABLE `medicamento` (
   KEY `fk-distribuidora` (`id_distribuidora`),
   CONSTRAINT `medicamento_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `medicamento_ibfk_2` FOREIGN KEY (`id_distribuidora`) REFERENCES `distribuidoras` (`id_distribuidora`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +155,6 @@ CREATE TABLE `medicamento` (
 
 LOCK TABLES `medicamento` WRITE;
 /*!40000 ALTER TABLE `medicamento` DISABLE KEYS */;
-INSERT INTO `medicamento` VALUES (17,'Tylenol',2,'2022-08-29','Observ',1,'Q12','Q32','16','C:UsersgamegDesktop	areaPrograPrácticasdiagDataBase.PNG'),(18,'Atorvastatina',2,'2022-09-29','Lol',3,'782','322','29','no');
 /*!40000 ALTER TABLE `medicamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,7 +213,6 @@ CREATE TABLE `pedidos` (
 
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
-INSERT INTO `pedidos` VALUES (2,'dnjsd','fsdfsdsd','sdfsdsdf','dfsfds','2022-09-07',2,'aBHAy867','14013.44'),(3,'gfdgfd','dgfg','fgdfgdf','fgdg','2022-09-07',2,'BY86afv','1751.68'),(4,'dfddf','dfddf','dfdfdf','dfs','2022-09-07',2,'Aqui esta','1751.68'),(5,'bcvbvvbvbv','vvccv','cvc','dfdfdf','2022-09-07',2,'UGD7H','15765.12'),(6,'ffcfdfdffdf','dfffffff','dfdfd','fdf','2022-09-07',2,'curcurfffffffffffff','1751.68'),(7,'CaRLOS','fsdfds','fddfd','sddssd','2022-09-07',2,'ABYUSV','1751.68'),(8,'vcxcvcxvxc','cvvc','cvvcxv','cvxvxc','2022-09-07',2,'<huiUIGAI','1751.68'),(9,'dfd','dfdsdf','sdsdsd','sdsdsd','2022-09-07',2,'BH78G','12261.76'),(10,'dfsddfsd','ddsd','sdd','ddd','2022-09-07',2,'curfff','1751.68'),(11,'Carlos Eduardo','23124-4','35378433','Ciudad de Quetzaltenango','2022-09-04',2,'A2244','5255.04'),(12,'Carlos2','342423-5','34242343','Ciudad','2022-09-08',2,'GF7BS9','1751.68');
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -240,7 +235,7 @@ CREATE TABLE `usuarios` (
   `correo_usuario` varchar(100) NOT NULL,
   `img_usuario` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -249,7 +244,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (2,'Admin2','+W1+cHVq+3lrtZtVSC/g4g==','Administrador','Carlos','72567326','6271552','Ingeniero','carlos@gmail.com','C:UsersgamegDocumentshqdefault.jpg'),(3,'Vendedor1','DwN1hMmef9T0+MWVUPj1Bw==','Vendedor','JC','328902','253656734','EMPLEADO','JC@gmail.com','C:UsersgamegDocumentshqdefault (1).jpg'),(4,'Vendedor2','zgv9FQWbaNZ2iIhNej0+jA==','Vendedor','Carlos2','215465156156','32343254','Vendedor','hola@gmail.com','C:UsersgamegDocumentshqdefault (1).jpg');
+INSERT INTO `usuarios` VALUES (5,'USUARIOPRUEBA','zgv9FQWbaNZ2iIhNej0+jA==','Vendedor','Carlos Estrada Diaz','678263748','45651213','Vendedor Normal','carlosdiaz@gmail.com','C:\\Users\\gameg\\Documents\\hqdefault (1).jpg'),(6,'ADMINPRUEBA','DwN1hMmef9T0+MWVUPj1Bw==','Administrador','Ernesto Mendez','78374298','1234568','Ingeniero','emcui@gmail.com','C:\\Users\\gameg\\Documents\\hqdefault.jpg');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,4 +261,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-08 12:11:33
+-- Dump completed on 2022-09-09 16:08:59

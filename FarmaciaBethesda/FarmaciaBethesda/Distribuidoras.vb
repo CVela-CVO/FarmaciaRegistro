@@ -3,12 +3,36 @@ Public Class Distribuidoras
     Dim index As Integer
     Dim iddeptoscombobox As String
     Dim stringindex As String
+    Dim columnabuscar As String
+    Dim datobuscar As String
+    Dim stringbuscar As String
     Sub cleartxt()
         TbNombre.Clear()
         TbDireccion.Clear()
         TbNumero.Clear()
         stringindex = ""
         iddeptoscombobox = ""
+    End Sub
+    Sub designbuscar()
+
+        If cbbuscar.Text = "Nombre" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE m.name_distribuidora LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "Departamento" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE ma.nombre_depto LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "Numero" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE m.num_distribuidora LIKE "
+            datobuscar = "'" + tbbuscar.Text + "%" + "'"
+        ElseIf cbbuscar.Text = "" And tbbuscar.Text = "" Then
+            columnabuscar = ""
+            datobuscar = ""
+        ElseIf cbbuscar.Text <> "" And tbbuscar.Text = "" Then
+            MessageBox.Show("Debe ingresar un dato a buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        ElseIf cbbuscar.Text = "" And tbbuscar.Text <> "" Then
+            MessageBox.Show("Debe seleccionar la categoría del dato a buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
     End Sub
     Sub guardardatos()
         Try
@@ -82,13 +106,13 @@ Public Class Distribuidoras
             da = New MySqlDataAdapter(sQuery, conn)
             dt = New DataTable
             da.Fill(dt)
-            DTGmarcas.DataSource = dt
+            DTGdistribuidoras.DataSource = dt
             conn.Close()
         Catch ex As Exception
             MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Private Sub DTGmarcas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGmarcas.CellContentClick
+    Private Sub DTGmarcas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGdistribuidoras.CellContentClick
 
     End Sub
 
@@ -118,7 +142,7 @@ Public Class Distribuidoras
                 Dim da As MySqlDataAdapter
                 Dim dt As DataTable
                 conn.Open()
-                Dim sQuery = "UPDATE distribuidoras SET name_distribuidora='" & TbNombre.Text & "',id_departamento=" & iddeptoscombobox & ",`dir_distribuidora`='" & TbDireccion.Text & "',num_distribuidora='" & TbNumero.Text & "' WHERE 1"
+                Dim sQuery = "UPDATE distribuidoras SET name_distribuidora='" & TbNombre.Text & "',id_departamento=" & iddeptoscombobox & ",`dir_distribuidora`='" & TbDireccion.Text & "',num_distribuidora='" & TbNumero.Text & "' WHERE id_distribuidora = " & stringindex
                 da = New MySqlDataAdapter(sQuery, conn)
                 dt = New DataTable
                 da.Fill(dt)
@@ -174,18 +198,38 @@ Public Class Distribuidoras
 
     End Sub
 
-    Private Sub BtExaminar_Click(sender As Object, e As EventArgs) 
+    Private Sub BtExaminar_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub DTGmarcas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGmarcas.CellClick
+    Private Sub DTGmarcas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGdistribuidoras.CellClick
         index = e.RowIndex
         Dim selectedrow As DataGridViewRow
-        selectedrow = DTGmarcas.Rows(index)
+        selectedrow = DTGdistribuidoras.Rows(index)
         stringindex = selectedrow.Cells(0).Value.ToString
         TbNombre.Text = selectedrow.Cells(1).Value.ToString
         CbDpto.SelectedItem = selectedrow.Cells(2).Value.ToString
         TbDireccion.Text = selectedrow.Cells(3).Value.ToString
         TbNumero.Text = selectedrow.Cells(4).Value.ToString
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ReadQuery()
+        tbbuscar.Clear()
+    End Sub
+
+    Private Sub Btbuscar_Click(sender As Object, e As EventArgs) Handles Btbuscar.Click
+        designbuscar()
+        Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
+        Dim conn As New MySqlConnection(cadenaConexion)
+        Dim da As MySqlDataAdapter
+        Dim dt As DataTable
+        conn.Open()
+        Dim sQuery = "SELECT m.`id_distribuidora` as 'ID', m.`name_distribuidora` as 'Nombre', ma.`nombre_depto` as 'depto', m.`num_distribuidora` as 'numero', m.`dir_distribuidora` as 'direccion'FROM distribuidoras m INNER JOIN departamentos ma ON m.id_departamento = ma.id_departamento" + columnabuscar + datobuscar + ";"
+        da = New MySqlDataAdapter(sQuery, conn)
+        dt = New DataTable
+        da.Fill(dt)
+        DTGdistribuidoras.DataSource = dt
+        conn.Close()
     End Sub
 End Class

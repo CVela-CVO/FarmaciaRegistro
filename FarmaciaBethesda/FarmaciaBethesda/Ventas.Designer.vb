@@ -24,6 +24,8 @@ Partial Class Ventas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TbID = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -44,7 +46,6 @@ Partial Class Ventas
         Me.BtProd = New System.Windows.Forms.Button()
         Me.BtVolver = New System.Windows.Forms.Button()
         Me.BtLimpiar = New System.Windows.Forms.Button()
-        Me.Btfactura = New System.Windows.Forms.Button()
         Me.Subtotal = New System.Windows.Forms.ListBox()
         Me.Cantidad = New System.Windows.Forms.ListBox()
         Me.Productos = New System.Windows.Forms.ListBox()
@@ -65,8 +66,6 @@ Partial Class Ventas
         Me.TbName = New System.Windows.Forms.TextBox()
         Me.vectorid = New System.Windows.Forms.ListBox()
         Me.restavector = New System.Windows.Forms.ListBox()
-        Me.TbID = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NUDcant, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -97,7 +96,6 @@ Partial Class Ventas
         Me.GroupBox1.Controls.Add(Me.BtProd)
         Me.GroupBox1.Controls.Add(Me.BtVolver)
         Me.GroupBox1.Controls.Add(Me.BtLimpiar)
-        Me.GroupBox1.Controls.Add(Me.Btfactura)
         Me.GroupBox1.Controls.Add(Me.Subtotal)
         Me.GroupBox1.Controls.Add(Me.Cantidad)
         Me.GroupBox1.Controls.Add(Me.Productos)
@@ -108,6 +106,25 @@ Partial Class Ventas
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Facturación"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.Info
+        Me.Label6.Location = New System.Drawing.Point(79, 17)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 22)
+        Me.Label6.TabIndex = 57
+        Me.Label6.Text = "ID: "
+        '
+        'TbID
+        '
+        Me.TbID.Location = New System.Drawing.Point(124, 17)
+        Me.TbID.Name = "TbID"
+        Me.TbID.ReadOnly = True
+        Me.TbID.Size = New System.Drawing.Size(27, 23)
+        Me.TbID.TabIndex = 56
         '
         'Label16
         '
@@ -320,19 +337,6 @@ Partial Class Ventas
         Me.BtLimpiar.Text = "Limpiar datos"
         Me.BtLimpiar.UseVisualStyleBackColor = False
         '
-        'Btfactura
-        '
-        Me.Btfactura.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.Btfactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btfactura.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btfactura.ForeColor = System.Drawing.SystemColors.Info
-        Me.Btfactura.Location = New System.Drawing.Point(684, 167)
-        Me.Btfactura.Name = "Btfactura"
-        Me.Btfactura.Size = New System.Drawing.Size(302, 51)
-        Me.Btfactura.TabIndex = 29
-        Me.Btfactura.Text = "Imprimir factura "
-        Me.Btfactura.UseVisualStyleBackColor = False
-        '
         'Subtotal
         '
         Me.Subtotal.FormattingEnabled = True
@@ -536,31 +540,13 @@ Partial Class Ventas
         Me.restavector.TabIndex = 3
         Me.restavector.Visible = False
         '
-        'TbID
-        '
-        Me.TbID.Location = New System.Drawing.Point(124, 17)
-        Me.TbID.Name = "TbID"
-        Me.TbID.ReadOnly = True
-        Me.TbID.Size = New System.Drawing.Size(27, 23)
-        Me.TbID.TabIndex = 56
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.Info
-        Me.Label6.Location = New System.Drawing.Point(79, 17)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 22)
-        Me.Label6.TabIndex = 57
-        Me.Label6.Text = "ID: "
-        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(1032, 641)
+        Me.ControlBox = False
         Me.Controls.Add(Me.restavector)
         Me.Controls.Add(Me.vectorid)
         Me.Controls.Add(Me.GroupBox2)
@@ -590,7 +576,6 @@ Partial Class Ventas
     Friend WithEvents BtProd As Button
     Friend WithEvents BtVolver As Button
     Friend WithEvents BtLimpiar As Button
-    Friend WithEvents Btfactura As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TbNit As TextBox
     Friend WithEvents TbName As TextBox
