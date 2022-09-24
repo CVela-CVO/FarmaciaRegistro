@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Login
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Login
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -32,7 +32,6 @@ Partial Class Login
         Me.BtLogout = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -123,7 +122,6 @@ Partial Class Login
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.BtLogout)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -136,15 +134,6 @@ Partial Class Login
         Me.GroupBox1.Size = New System.Drawing.Size(321, 246)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(7, 198)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(140, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "login temporal"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Login
         '
@@ -174,5 +163,4 @@ Partial Class Login
     Friend WithEvents BtLogout As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button1 As Button
 End Class

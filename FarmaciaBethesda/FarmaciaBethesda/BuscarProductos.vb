@@ -48,16 +48,7 @@ Public Class BuscarProductos
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
-        Index = e.RowIndex
-        Dim selectedrow As DataGridViewRow
-        selectedrow = DataGridView1.Rows(Index)
-        idmedicamento = selectedrow.Cells(0).Value.ToString
-        varname = selectedrow.Cells(1).Value.ToString
-        varcompra = selectedrow.Cells(12).Value.ToString
-        varventa = selectedrow.Cells(2).Value.ToString
-        varexistencias = selectedrow.Cells(3).Value.ToString
-        Ventas.setarticulo(idmedicamento, varname, varcompra, varventa, varexistencias)
-        Me.Hide()
+
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -76,5 +67,26 @@ Public Class BuscarProductos
         da.Fill(dt)
         DataGridView1.DataSource = dt
         conn.Close()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Index = e.RowIndex
+        Dim selectedrow As DataGridViewRow
+        selectedrow = DataGridView1.Rows(Index)
+        idmedicamento = selectedrow.Cells(0).Value.ToString
+        varname = selectedrow.Cells(1).Value.ToString
+        varcompra = selectedrow.Cells(12).Value.ToString
+        varventa = selectedrow.Cells(2).Value.ToString
+        varexistencias = selectedrow.Cells(3).Value.ToString
+        Ventas.setarticulo(idmedicamento, varname, varcompra, varventa, varexistencias)
+        Me.Hide()
     End Sub
 End Class

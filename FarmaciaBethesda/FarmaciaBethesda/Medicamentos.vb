@@ -9,10 +9,11 @@ Public Class Medicamentos
     Dim idmarcacombobox As String
     Dim fechasql As String
     Dim iddistribcombobox As String
-    Dim direcciontemporal As String
     Dim columnabuscar As String
     Dim datobuscar As String
     Dim stringbuscar As String
+    Dim direccionfinal As String
+    Dim direccionproduc As String = "C:\xampp\htdocs\php_bethesda\ImgFarmacia\Productos\"
     Sub cleartxt()
         TbNombre.Clear()
         TbObservacion.Clear()
@@ -33,21 +34,21 @@ Public Class Medicamentos
     End Sub
     Sub designbuscar()
 
-        If ComboBox1.Text = "Nombre" And tbbuscar.Text <> "" Then
-            columnabuscar = " WHERE m.id_medicamento LIKE "
+        If cbbuscar.Text = "Nombre" And tbbuscar.Text <> "" Then
+            columnabuscar = " WHERE m.name_medicamento LIKE "
             datobuscar = "'" + tbbuscar.Text + "%" + "'"
-        ElseIf ComboBox1.Text = "Marca" And tbbuscar.Text <> "" Then
+        ElseIf cbbuscar.Text = "Marca" And tbbuscar.Text <> "" Then
             columnabuscar = " WHERE ma.name_marca LIKE "
             datobuscar = "'" + tbbuscar.Text + "%" + "'"
-        ElseIf ComboBox1.Text = "Distribuidora" And tbbuscar.Text <> "" Then
+        ElseIf cbbuscar.Text = "Distribuidora" And tbbuscar.Text <> "" Then
             columnabuscar = " WHERE di.name_distribuidora LIKE "
             datobuscar = "'" + tbbuscar.Text + "%" + "'"
-        ElseIf ComboBox1.Text = "" And tbbuscar.Text = "" Then
+        ElseIf cbbuscar.Text = "" And tbbuscar.Text = "" Then
             columnabuscar = ""
             datobuscar = ""
-        ElseIf ComboBox1.Text <> "" And tbbuscar.Text = "" Then
+        ElseIf cbbuscar.Text <> "" And tbbuscar.Text = "" Then
             MessageBox.Show("Debe ingresar un dato a buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        ElseIf ComboBox1.Text = "" And tbbuscar.Text <> "" Then
+        ElseIf cbbuscar.Text = "" And tbbuscar.Text <> "" Then
             MessageBox.Show("Debe seleccionar la categoría del dato a buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         End If
@@ -69,7 +70,7 @@ Public Class Medicamentos
                 Dim da As MySqlDataAdapter
                 Dim dt As DataTable
                 conn.Open()
-                Dim sQuery = "INSERT INTO medicamento (name_medicamento, id_marca, fechacad_medicamento, obs_medicamento, id_distribuidora, precio_medicamento, costo_medicamento, medica_existencias, img_medicamento) VALUES ('" & TbNombre.Text & "'," & idmarcacombobox & ",'" & fechasql & "','" & TbObservacion.Text & "'," & iddistribcombobox & ",'" & Convert.ToString(NUDprecio.Value) & "','" & Convert.ToString(NUDcosto.Value) & "','" & Convert.ToString(NUDexistencias.Value) & "','" & direcciontemporal & "');"
+                Dim sQuery = "INSERT INTO medicamento (name_medicamento, id_marca, fechacad_medicamento, obs_medicamento, id_distribuidora, precio_medicamento, costo_medicamento, medica_existencias, img_medicamento) VALUES ('" & TbNombre.Text & "'," & idmarcacombobox & ",'" & fechasql & "','" & TbObservacion.Text & "'," & iddistribcombobox & ",'" & Convert.ToString(NUDprecio.Value) & "','" & Convert.ToString(NUDcosto.Value) & "','" & Convert.ToString(NUDexistencias.Value) & "','" & direccionfinal & "');"
                 da = New MySqlDataAdapter(sQuery, conn)
                 dt = New DataTable
                 da.Fill(dt)
@@ -178,17 +179,7 @@ Public Class Medicamentos
             OpenFileDialog1.ShowDialog()
             direccionimagen = OpenFileDialog1.FileName
 
-            Dim nuevacadena() As Char
-
-            nuevacadena = direccionimagen.ToCharArray()
-            For i = 0 To nuevacadena.Length - 1 Step 1
-                If nuevacadena(i) = "\" Then
-                    direcciontemporal = direcciontemporal & "\\"
-                Else
-                    direcciontemporal = direcciontemporal & nuevacadena(i)
-                End If
-            Next
-
+            direccionfinal = direccionimagen.Replace("C:\xampp\htdocs\php_bethesda\ImgFarmacia\Productos\", "")
             PbMedicamento.Image = Image.FromFile(direccionimagen, True)
 
         Catch ex As Exception
@@ -210,25 +201,25 @@ Public Class Medicamentos
     Private Sub BtEditar_Click(sender As Object, e As EventArgs) Handles BtEditar.Click
 
         indexmarca()
-            indexdistrib()
-            dateformato()
-            If String.IsNullOrEmpty(TbNombre.Text) Or String.IsNullOrEmpty(TbObservacion.Text) Or
+        indexdistrib()
+        dateformato()
+        If String.IsNullOrEmpty(TbNombre.Text) Or String.IsNullOrEmpty(TbObservacion.Text) Or
             String.IsNullOrEmpty(direccionimagen) Then
-                MessageBox.Show("No ingresó los datos completos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
-                Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
-                Dim conn As New MySqlConnection(cadenaConexion)
-                Dim da As MySqlDataAdapter
-                Dim dt As DataTable
-                conn.Open()
-            Dim sQuery = "UPDATE medicamento SET name_medicamento='" & TbNombre.Text & "',id_marca=" & idmarcacombobox & ",fechacad_medicamento='" & fechasql & "',obs_medicamento='" & TbObservacion.Text & "',id_distribuidora = " & iddistribcombobox & ",precio_medicamento='" & Convert.ToString(NUDprecio.Value) & "',costo_medicamento='" & Convert.ToString(NUDprecio.Value) & "',medica_existencias='" & Convert.ToString(NUDexistencias.Value) & "',img_medicamento='" & direcciontemporal & "' WHERE id_medicamento=" & stringindex
+            MessageBox.Show("No ingresó los datos completos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
+            Dim conn As New MySqlConnection(cadenaConexion)
+            Dim da As MySqlDataAdapter
+            Dim dt As DataTable
+            conn.Open()
+            Dim sQuery = "UPDATE medicamento SET name_medicamento='" & TbNombre.Text & "',id_marca=" & idmarcacombobox & ",fechacad_medicamento='" & fechasql & "',obs_medicamento='" & TbObservacion.Text & "',id_distribuidora = " & iddistribcombobox & ",precio_medicamento='" & Convert.ToString(NUDprecio.Value) & "',costo_medicamento='" & Convert.ToString(NUDprecio.Value) & "',medica_existencias='" & Convert.ToString(NUDexistencias.Value) & "',img_medicamento='" & direccionfinal & "' WHERE id_medicamento=" & stringindex
             da = New MySqlDataAdapter(sQuery, conn)
-                dt = New DataTable
-                da.Fill(dt)
-                conn.Close()
-                ReadQuery()
-                cleartxt()
-            End If
+            dt = New DataTable
+            da.Fill(dt)
+            conn.Close()
+            ReadQuery()
+            cleartxt()
+        End If
 
     End Sub
     Private Sub BtNuevo_Click(sender As Object, e As EventArgs) Handles BtNuevo.Click
@@ -238,6 +229,7 @@ Public Class Medicamentos
     Private Sub DTGmedicamentos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DTGmedicamentos.CellClick
         index = e.RowIndex
         Dim selectedrow As DataGridViewRow
+
         selectedrow = DTGmedicamentos.Rows(index)
         stringindex = selectedrow.Cells(0).Value.ToString
         TbNombre.Text = selectedrow.Cells(1).Value.ToString
@@ -247,16 +239,8 @@ Public Class Medicamentos
         NUDprecio.Value = selectedrow.Cells(6).Value
         NUDcosto.Value = selectedrow.Cells(7).Value.ToString
         NUDexistencias.Value = selectedrow.Cells(8).Value.ToString
-        direccionimagen = selectedrow.Cells(9).Value.ToString
-        Dim nuevacadena() As Char
-        nuevacadena = direccionimagen.ToCharArray()
-        For i = 0 To nuevacadena.Length - 1 Step 1
-            If nuevacadena(i) = "\" Then
-                direcciontemporal = direcciontemporal & "\\"
-            Else
-                direcciontemporal = direcciontemporal & nuevacadena(i)
-            End If
-        Next
+        direccionfinal = selectedrow.Cells(9).Value.ToString
+        direccionimagen = direccionproduc & direccionfinal
         PbMedicamento.Image = Image.FromFile(direccionimagen, True)
         DateTimePicker1.Value = selectedrow.Cells(4).Value.ToString
     End Sub

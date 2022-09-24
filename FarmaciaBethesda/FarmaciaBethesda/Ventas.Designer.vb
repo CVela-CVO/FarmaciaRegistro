@@ -66,6 +66,7 @@ Partial Class Ventas
         Me.TbName = New System.Windows.Forms.TextBox()
         Me.vectorid = New System.Windows.Forms.ListBox()
         Me.restavector = New System.Windows.Forms.ListBox()
+        Me.btcambiar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NUDcant, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -366,6 +367,7 @@ Partial Class Ventas
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btcambiar)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.TbSerie)
         Me.GroupBox2.Controls.Add(Me.CheckBox1)
@@ -540,6 +542,19 @@ Partial Class Ventas
         Me.restavector.TabIndex = 3
         Me.restavector.Visible = False
         '
+        'btcambiar
+        '
+        Me.btcambiar.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.btcambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btcambiar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btcambiar.ForeColor = System.Drawing.SystemColors.Info
+        Me.btcambiar.Location = New System.Drawing.Point(396, 120)
+        Me.btcambiar.Name = "btcambiar"
+        Me.btcambiar.Size = New System.Drawing.Size(382, 34)
+        Me.btcambiar.TabIndex = 52
+        Me.btcambiar.Text = "Cambiar Cliente"
+        Me.btcambiar.UseVisualStyleBackColor = False
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -608,4 +623,5 @@ Partial Class Ventas
     Friend WithEvents restavector As ListBox
     Friend WithEvents Label6 As Label
     Friend WithEvents TbID As TextBox
+    Friend WithEvents btcambiar As Button
 End Class

@@ -67,6 +67,7 @@ Public Class Ventas
         TbName.Enabled = True
         tbdir.Enabled = True
         TbNit.Enabled = True
+        TbSerie.Enabled = True
         Cantidad.Items.Clear()
         Productos.Items.Clear()
         Subtotal.Items.Clear()
@@ -119,6 +120,8 @@ Public Class Ventas
                 TbName.Enabled = False
                 tbdir.Enabled = False
                 tbcel.Enabled = False
+                TbSerie.Enabled = False
+                btcambiar.Enabled = True
             End If
         ElseIf consumer = False Then
             namecliente = "Consumidor Final"
@@ -130,6 +133,9 @@ Public Class Ventas
             TbName.Enabled = False
             tbdir.Enabled = False
             tbcel.Enabled = False
+            TbSerie.Enabled = False
+            btcambiar.Enabled = True
+
         End If
     End Sub
 
@@ -166,7 +172,22 @@ Public Class Ventas
     End Sub
 
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btcambiar.Enabled = False
+    End Sub
 
+    Private Sub BtVolver_Click_1(sender As Object, e As EventArgs) Handles BtVolver.Click
+        Me.Hide()
+        BuscarProductos.Hide()
+        MenuM.Show()
+    End Sub
+
+    Private Sub btcambiar_Click(sender As Object, e As EventArgs) Handles btcambiar.Click
+        TbNit.Enabled = True
+        TbName.Enabled = True
+        tbdir.Enabled = True
+        tbcel.Enabled = True
+        TbSerie.Enabled = True
+        btcambiar.Enabled = False
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click

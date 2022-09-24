@@ -7,7 +7,9 @@ Public Class Marcas
     Dim direccionimagen As String
     Dim columnabuscar As String
     Dim datobuscar As String
+    Dim direccionfinal As String
     Dim stringbuscar As String
+    Dim direccionmarcas As String = "C:\xampp\htdocs\php_bethesda\ImgFarmacia\Marcas\"
     Sub cleartxt()
         TbNombre.Clear()
         PbMarca.Image = Nothing
@@ -43,7 +45,7 @@ Public Class Marcas
             Dim da As MySqlDataAdapter
             Dim dt As DataTable
             conn.Open()
-            Dim sQuery = "INSERT INTO marca (name_marca, id_paises, ico_marca) VALUES ('" & TbNombre.Text & "'," & idpaisescombobox & ",'" & direcciontemporal & "');"
+            Dim sQuery = "INSERT INTO marca (name_marca, id_paises, ico_marca) VALUES ('" & TbNombre.Text & "'," & idpaisescombobox & ",'" & direccionfinal & "');"
             da = New MySqlDataAdapter(sQuery, conn)
             dt = New DataTable
             da.Fill(dt)
@@ -116,17 +118,7 @@ Public Class Marcas
             OpenFileDialog1.ShowDialog()
             direccionimagen = OpenFileDialog1.FileName
 
-            Dim nuevacadena() As Char
-
-            nuevacadena = direccionimagen.ToCharArray()
-            For i = 0 To nuevacadena.Length - 1 Step 1
-                If nuevacadena(i) = "\" Then
-                    direcciontemporal = direcciontemporal & "\\"
-                Else
-                    direcciontemporal = direcciontemporal & nuevacadena(i)
-                End If
-            Next
-
+            direccionfinal = direccionimagen.Replace("C:\xampp\htdocs\php_bethesda\ImgFarmacia\Marcas\", "")
             PbMarca.Image = Image.FromFile(direccionimagen, True)
 
         Catch ex As Exception
@@ -156,7 +148,7 @@ Public Class Marcas
                 Dim da As MySqlDataAdapter
                 Dim dt As DataTable
                 conn.Open()
-                Dim sQuery = "UPDATE marca SET name_marca='" & TbNombre.Text & "',id_paises=" & idpaisescombobox & ",ico_marca='" & direcciontemporal & "' WHERE id_marca = " & stringindex
+                Dim sQuery = "UPDATE marca SET name_marca='" & TbNombre.Text & "',id_paises=" & idpaisescombobox & ",ico_marca='" & direccionfinal & "' WHERE id_marca = " & stringindex
                 da = New MySqlDataAdapter(sQuery, conn)
                 dt = New DataTable
                 da.Fill(dt)
@@ -219,16 +211,8 @@ Public Class Marcas
         stringindex = selectedrow.Cells(0).Value.ToString
         TbNombre.Text = selectedrow.Cells(1).Value.ToString
         CbPais.SelectedItem = selectedrow.Cells(2).Value.ToString
-        direccionimagen = selectedrow.Cells(3).Value.ToString
-        Dim nuevacadena() As Char
-        nuevacadena = direccionimagen.ToCharArray()
-        For i = 0 To nuevacadena.Length - 1 Step 1
-            If nuevacadena(i) = "\" Then
-                direcciontemporal = direcciontemporal & "\\"
-            Else
-                direcciontemporal = direcciontemporal & nuevacadena(i)
-            End If
-        Next
+        direccionfinal = selectedrow.Cells(3).Value.ToString
+        direccionimagen = direccionmarcas & direccionfinal
         PbMarca.Image = Image.FromFile(direccionimagen, True)
     End Sub
 
