@@ -50,6 +50,7 @@ Partial Class Ventas
         Me.Cantidad = New System.Windows.Forms.ListBox()
         Me.Productos = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btcambiar = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TbSerie = New System.Windows.Forms.TextBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -66,7 +67,6 @@ Partial Class Ventas
         Me.TbName = New System.Windows.Forms.TextBox()
         Me.vectorid = New System.Windows.Forms.ListBox()
         Me.restavector = New System.Windows.Forms.ListBox()
-        Me.btcambiar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NUDcant, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -390,6 +390,19 @@ Partial Class Ventas
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos del cliente"
         '
+        'btcambiar
+        '
+        Me.btcambiar.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.btcambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btcambiar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btcambiar.ForeColor = System.Drawing.SystemColors.Info
+        Me.btcambiar.Location = New System.Drawing.Point(396, 120)
+        Me.btcambiar.Name = "btcambiar"
+        Me.btcambiar.Size = New System.Drawing.Size(382, 34)
+        Me.btcambiar.TabIndex = 52
+        Me.btcambiar.Text = "Cambiar Cliente"
+        Me.btcambiar.UseVisualStyleBackColor = False
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -541,19 +554,6 @@ Partial Class Ventas
         Me.restavector.Size = New System.Drawing.Size(13, 17)
         Me.restavector.TabIndex = 3
         Me.restavector.Visible = False
-        '
-        'btcambiar
-        '
-        Me.btcambiar.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.btcambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btcambiar.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btcambiar.ForeColor = System.Drawing.SystemColors.Info
-        Me.btcambiar.Location = New System.Drawing.Point(396, 120)
-        Me.btcambiar.Name = "btcambiar"
-        Me.btcambiar.Size = New System.Drawing.Size(382, 34)
-        Me.btcambiar.TabIndex = 52
-        Me.btcambiar.Text = "Cambiar Cliente"
-        Me.btcambiar.UseVisualStyleBackColor = False
         '
         'Ventas
         '

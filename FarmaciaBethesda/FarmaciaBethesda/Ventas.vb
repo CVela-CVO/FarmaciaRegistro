@@ -190,6 +190,18 @@ Public Class Ventas
         btcambiar.Enabled = False
     End Sub
 
+    Private Sub tbcel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbcel.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) < 58 Then
+                e.Handled = False
+            ElseIf Asc(e.KeyChar) = 45 Then
+                e.Handled = False
+            Else
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         BuscarProductos.Show()
     End Sub

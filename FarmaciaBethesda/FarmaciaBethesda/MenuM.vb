@@ -1,8 +1,11 @@
 ﻿Public Class MenuM
     Dim usertoken = Login.tokenusertype
+
     Private Sub BtVolver_Click(sender As Object, e As EventArgs) Handles BtVolver.Click
-        Me.Hide()
+        Me.Close()
         Login.Show()
+        Login.tokenusertype = ""
+        Login.iduser = ""
     End Sub
 
     Private Sub BtSalir_Click(sender As Object, e As EventArgs) Handles BtSalir.Click
