@@ -29,14 +29,16 @@ Public Class VistaVentas
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             If String.IsNullOrEmpty(numero) Then
-                MessageBox.Show("Seleccione una fila de la tabla para eliminarla correctamente", "Error de tabla", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Seleccione una fila de la tabla para eliminarla correctamente",
+                                "Error de tabla", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
                 Dim conn As New MySqlConnection(cadenaConexion)
                 Dim da As MySqlDataAdapter
                 Dim dt As DataTable
                 conn.Open()
-                Dim sQuery = "DELETE FROM pedidos WHERE id_pedido =" & numero & ";" & "DELETE FROM detalle_pedidos WHERE id_pedido =" & numero & ";"
+                Dim sQuery = "DELETE FROM pedidos WHERE id_pedido =" & numero & ";" &
+                    "DELETE FROM detalle_pedidos WHERE id_pedido =" & numero & ";"
                 da = New MySqlDataAdapter(sQuery, conn)
                 dt = New DataTable
                 da.Fill(dt)
@@ -44,7 +46,8 @@ Public Class VistaVentas
                 ReadQuery()
             End If
         Catch EX As Exception
-            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -55,7 +58,8 @@ Public Class VistaVentas
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If String.IsNullOrEmpty(numero) Then
-            MessageBox.Show("Debe seleccionar una fila de la tabla para mostrar su factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Debe seleccionar una fila de la tabla para mostrar su factura",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             Factura.Show()
         End If

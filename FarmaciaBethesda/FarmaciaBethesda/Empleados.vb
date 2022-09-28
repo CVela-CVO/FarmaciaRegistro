@@ -12,6 +12,17 @@ Public Class Empleados
     Dim columnabuscar As String
     Dim datobuscar As String
     Dim stringbuscar As String
+    Sub cadenanueva()
+        Dim nuevacadena() As Char
+        nuevacadena = direccionimagen.ToCharArray()
+        For i = 0 To nuevacadena.Length - 1 Step 1
+            If nuevacadena(i) = "\" Then
+                direcciontemporal = direcciontemporal & "\\"
+            Else
+                direcciontemporal = direcciontemporal & nuevacadena(i)
+            End If
+        Next
+    End Sub
     Sub cleartxt()
         TbNombre.Clear()
         TbCui.Clear()
@@ -99,6 +110,7 @@ Public Class Empleados
                     Dim da As MySqlDataAdapter
                     Dim dt As DataTable
                     conn.Open()
+
                     Dim sQuery = "INSERT INTO usuarios (username, userpass, usertype, nombre_user, CUI_usuario, num_usuario, puesto_usuario, correo_usuario, img_usuario) VALUES ('" & TbUserName.Text & "','" & nuevaclave & "','" & tipouser & "','" & TbNombre.Text & "','" & TbCui.Text & "','" & TbNumero.Text & "','" & TbPuesto.Text & "','" & TbEmail.Text & "','" & direcciontemporal & "');"
                     da = New MySqlDataAdapter(sQuery, conn)
                     dt = New DataTable
@@ -138,11 +150,13 @@ Public Class Empleados
             Dim emailRegEx As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(regexPattern)
             Dim result As Boolean = emailRegEx.IsMatch(TbEmail.Text)
             If Not result Then
-                MessageBox.Show("Ingrese un correo válido", "Verificación de Email", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("Ingrese un correo válido", "Verificación de Email", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation)
             End If
             If result Then
                 If TbPassword.Text <> TbVerify.Text Then
-                    MessageBox.Show("La contraseña que ingresó, no coincide con la verificción", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MessageBox.Show("La contraseña que ingresó, no coincide con la verificación", "Verificación",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Else
                     encriptacion()
                     Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
@@ -150,7 +164,13 @@ Public Class Empleados
                     Dim da As MySqlDataAdapter
                     Dim dt As DataTable
                     conn.Open()
-                    Dim sQuery = "UPDATE usuarios SET username='" & TbUserName.Text & "',userpass='" & nuevaclave & "',usertype='" & tipouser & "',nombre_user='" & TbNombre.Text & "',CUI_usuario='" & TbCui.Text & "',num_usuario='" & TbNumero.Text & "',puesto_usuario='" & TbPuesto.Text & "',correo_usuario='" & TbEmail.Text & "',img_usuario='" & direcciontemporal & "' WHERE id_user=" & stringindex
+
+                    Dim sQuery = "UPDATE usuarios SET username='" & TbUserName.Text & "',
+                            userpass='" & nuevaclave & "',usertype='" & tipouser & "',
+                            nombre_user='" & TbNombre.Text & "',CUI_usuario='" & TbCui.Text & "',
+                            num_usuario='" & TbNumero.Text & "',puesto_usuario='" & TbPuesto.Text & "',
+                            correo_usuario='" & TbEmail.Text & "',img_usuario='" & direcciontemporal & "' 
+                            WHERE id_user=" & stringindex
                     da = New MySqlDataAdapter(sQuery, conn)
                     dt = New DataTable
                     da.Fill(dt)
@@ -166,17 +186,7 @@ Public Class Empleados
         Try
             OpenFileDialog1.ShowDialog()
             direccionimagen = OpenFileDialog1.FileName
-
-            Dim nuevacadena() As Char
-
-            nuevacadena = direccionimagen.ToCharArray()
-            For i = 0 To nuevacadena.Length - 1 Step 1
-                If nuevacadena(i) = "\" Then
-                    direcciontemporal = direcciontemporal & "\\"
-                Else
-                    direcciontemporal = direcciontemporal & nuevacadena(i)
-                End If
-            Next
+            cadenanueva()
 
             PbEmpleado.Image = Image.FromFile(direccionimagen, True)
 
@@ -216,15 +226,7 @@ Public Class Empleados
             RdVendedor.Checked = True
         End If
         direccionimagen = selectedrow.Cells(9).Value.ToString
-        Dim nuevacadena() As Char
-        nuevacadena = direccionimagen.ToCharArray()
-        For i = 0 To nuevacadena.Length - 1 Step 1
-            If nuevacadena(i) = "\" Then
-                direcciontemporal = direcciontemporal & "\\"
-            Else
-                direcciontemporal = direcciontemporal & nuevacadena(i)
-            End If
-        Next
+
         PbEmpleado.Image = Image.FromFile(direccionimagen, True)
     End Sub
 

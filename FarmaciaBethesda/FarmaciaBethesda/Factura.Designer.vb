@@ -127,7 +127,7 @@ Partial Class Factura
         Me.telcliente.AutoSize = True
         Me.telcliente.Font = New System.Drawing.Font("Palatino Linotype", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.telcliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.telcliente.Location = New System.Drawing.Point(138, 116)
+        Me.telcliente.Location = New System.Drawing.Point(138, 144)
         Me.telcliente.Name = "telcliente"
         Me.telcliente.Size = New System.Drawing.Size(76, 28)
         Me.telcliente.TabIndex = 5
@@ -138,7 +138,7 @@ Partial Class Factura
         Me.dircliente.AutoSize = True
         Me.dircliente.Font = New System.Drawing.Font("Palatino Linotype", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dircliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.dircliente.Location = New System.Drawing.Point(138, 144)
+        Me.dircliente.Location = New System.Drawing.Point(138, 116)
         Me.dircliente.Name = "dircliente"
         Me.dircliente.Size = New System.Drawing.Size(76, 28)
         Me.dircliente.TabIndex = 6

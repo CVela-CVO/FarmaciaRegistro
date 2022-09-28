@@ -47,14 +47,6 @@ Public Class BuscarProductos
 
     End Sub
 
-    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
         Dim conn As New MySqlConnection(cadenaConexion)
@@ -69,14 +61,6 @@ Public Class BuscarProductos
         conn.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
-
-    End Sub
-
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         Index = e.RowIndex
         Dim selectedrow As DataGridViewRow
@@ -88,5 +72,9 @@ Public Class BuscarProductos
         varexistencias = selectedrow.Cells(3).Value.ToString
         Ventas.setarticulo(idmedicamento, varname, varcompra, varventa, varexistencias)
         Me.Hide()
+    End Sub
+
+    Private Sub BuscarProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

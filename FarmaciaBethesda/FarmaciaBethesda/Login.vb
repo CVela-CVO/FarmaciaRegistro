@@ -51,7 +51,8 @@ Public Class Login
             Dim codigo2 As MySqlCommand
             codigo2 = New MySqlCommand()
             codigo2.Connection = conn
-            codigo2.CommandText = "SELECT * FROM usuarios WHERE username = '" & TbUsuario.Text & "' and userpass = '" & nuevaclave & "'"
+            codigo2.CommandText = "SELECT * FROM usuarios WHERE username
+                = '" & TbUsuario.Text & "' and userpass = '" & nuevaclave & "'"
             leer = codigo2.ExecuteReader()
             If leer.Read() Then
                 getusertype()
@@ -59,11 +60,13 @@ Public Class Login
                 Me.Hide()
                 MenuM.Show()
             Else
-                MessageBox.Show("Nombre de usuario o contraseña incorrectos", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                MessageBox.Show("Nombre de usuario o contraseña incorrectos",
+                                "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             End If
             conn.Close()
         Catch ex As Exception
-            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Hubo un error de conexión con la base de datos",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         TbUsuario.Clear()
         TbContraseña.Clear()

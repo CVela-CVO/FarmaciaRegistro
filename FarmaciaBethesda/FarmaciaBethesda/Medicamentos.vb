@@ -47,10 +47,11 @@ Public Class Medicamentos
             columnabuscar = ""
             datobuscar = ""
         ElseIf cbbuscar.Text <> "" And tbbuscar.Text = "" Then
-            MessageBox.Show("Debe ingresar un dato a buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Debe ingresar un dato a buscar", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         ElseIf cbbuscar.Text = "" And tbbuscar.Text <> "" Then
-            MessageBox.Show("Debe seleccionar la categoría del dato a buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
+            MessageBox.Show("Debe seleccionar la categoría del dato a buscar.",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
     Sub dateformato()
@@ -70,7 +71,12 @@ Public Class Medicamentos
                 Dim da As MySqlDataAdapter
                 Dim dt As DataTable
                 conn.Open()
-                Dim sQuery = "INSERT INTO medicamento (name_medicamento, id_marca, fechacad_medicamento, obs_medicamento, id_distribuidora, precio_medicamento, costo_medicamento, medica_existencias, img_medicamento) VALUES ('" & TbNombre.Text & "'," & idmarcacombobox & ",'" & fechasql & "','" & TbObservacion.Text & "'," & iddistribcombobox & ",'" & Convert.ToString(NUDprecio.Value) & "','" & Convert.ToString(NUDcosto.Value) & "','" & Convert.ToString(NUDexistencias.Value) & "','" & direccionfinal & "');"
+                Dim sQuery = "INSERT INTO medicamento (name_medicamento, id_marca, 
+                    fechacad_medicamento, obs_medicamento, id_distribuidora, precio_medicamento, 
+                    costo_medicamento, medica_existencias, img_medicamento) VALUES ('" & TbNombre.Text & "',
+                    " & idmarcacombobox & ",'" & fechasql & "','" & TbObservacion.Text & "'," & iddistribcombobox & ",
+                    '" & Convert.ToString(NUDprecio.Value) & "','" & Convert.ToString(NUDcosto.Value) & "',
+                    '" & Convert.ToString(NUDexistencias.Value) & "','" & direccionfinal & "');"
                 da = New MySqlDataAdapter(sQuery, conn)
                 dt = New DataTable
                 da.Fill(dt)
@@ -79,7 +85,8 @@ Public Class Medicamentos
                 cleartxt()
             End If
         Catch ex As Exception
-            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Sub indexmarca()
@@ -96,7 +103,8 @@ Public Class Medicamentos
             idmarcacombobox = dt.Rows(0)("id_marca").ToString
             conn.Close()
         Catch ex As Exception
-            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Hubo un error de conexión con la base de datos",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Sub indexdistrib()
@@ -163,14 +171,21 @@ Public Class Medicamentos
             Dim da As MySqlDataAdapter
             Dim dt As DataTable
             conn.Open()
-            Dim sQuery = "SELECT m.`id_medicamento` as 'ID', m.`name_medicamento` as 'Nombre', ma.`name_marca` as 'Marca', di.`name_distribuidora` as 'Distribuidora' ,m.`fechacad_medicamento` as 'Fecha de Caducidad', m.`obs_medicamento` as 'Observación', m.`precio_medicamento` as 'Precio',m.`costo_medicamento` as 'Costo',m.`medica_existencias` as 'Existencias' , m.`img_medicamento` as 'Imagen' FROM medicamento m INNER JOIN marca ma ON m.id_marca = ma.id_marca INNER JOIN distribuidoras di ON m.id_distribuidora = di.id_distribuidora;"
+            Dim sQuery = "SELECT m.`id_medicamento` as 'ID', m.`name_medicamento` as 'Nombre',
+                 ma.`name_marca` as 'Marca', di.`name_distribuidora` as 'Distribuidora' ,
+                 m.`fechacad_medicamento` as 'Fecha de Caducidad', m.`obs_medicamento` as 'Observación',
+                 m.`precio_medicamento` as 'Precio',m.`costo_medicamento` as 'Costo',
+                 m.`medica_existencias` as 'Existencias' , m.`img_medicamento` as 'Imagen' FROM
+                 medicamento m INNER JOIN marca ma ON m.id_marca = ma.id_marca INNER JOIN distribuidoras di ON
+                 m.id_distribuidora = di.id_distribuidora;"
             da = New MySqlDataAdapter(sQuery, conn)
             dt = New DataTable
             da.Fill(dt)
             DTGmedicamentos.DataSource = dt
             conn.Close()
         Catch ex As Exception
-            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -183,7 +198,8 @@ Public Class Medicamentos
             PbMedicamento.Image = Image.FromFile(direccionimagen, True)
 
         Catch ex As Exception
-            MessageBox.Show("Hubo un error al incorporar la ruta o formato de la imagen al programa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Hubo un error al incorporar la ruta o formato de la imagen al programa",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -212,7 +228,13 @@ Public Class Medicamentos
             Dim da As MySqlDataAdapter
             Dim dt As DataTable
             conn.Open()
-            Dim sQuery = "UPDATE medicamento SET name_medicamento='" & TbNombre.Text & "',id_marca=" & idmarcacombobox & ",fechacad_medicamento='" & fechasql & "',obs_medicamento='" & TbObservacion.Text & "',id_distribuidora = " & iddistribcombobox & ",precio_medicamento='" & Convert.ToString(NUDprecio.Value) & "',costo_medicamento='" & Convert.ToString(NUDprecio.Value) & "',medica_existencias='" & Convert.ToString(NUDexistencias.Value) & "',img_medicamento='" & direccionfinal & "' WHERE id_medicamento=" & stringindex
+            Dim sQuery = "UPDATE medicamento SET name_medicamento='" & TbNombre.Text & "',
+                    id_marca=" & idmarcacombobox & ",fechacad_medicamento='" & fechasql & "',
+                    obs_medicamento='" & TbObservacion.Text & "',id_distribuidora = " & iddistribcombobox & ",
+                    precio_medicamento='" & Convert.ToString(NUDprecio.Value) & "',
+                    costo_medicamento='" & Convert.ToString(NUDprecio.Value) & "',
+                    medica_existencias='" & Convert.ToString(NUDexistencias.Value) & "',
+                    img_medicamento='" & direccionfinal & "' WHERE id_medicamento=" & stringindex
             da = New MySqlDataAdapter(sQuery, conn)
             dt = New DataTable
             da.Fill(dt)
@@ -248,7 +270,8 @@ Public Class Medicamentos
     Private Sub BtEliminar_Click(sender As Object, e As EventArgs) Handles BtEliminar.Click
         Try
             If String.IsNullOrEmpty(stringindex) Then
-                MessageBox.Show("Seleccione una fila de la tabla para eliminarla correctamente", "Error de tabla", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Seleccione una fila de la tabla para eliminarla correctamente",
+                                "Error de tabla", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 Dim cadenaConexion = "server=localhost;database=registrofarmacia;userid=root;password=;port=3306"
                 Dim conn As New MySqlConnection(cadenaConexion)
@@ -264,7 +287,8 @@ Public Class Medicamentos
                 cleartxt()
             End If
         Catch EX As Exception
-            MessageBox.Show("Hubo un error de conexión con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Hubo un error de conexión con la base de datos",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

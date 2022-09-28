@@ -26,7 +26,11 @@ Public Class Ventas
         Dim da As MySqlDataAdapter
         Dim dt As DataTable
         conn.Open()
-        Dim sQuery = "INSERT INTO pedidos (name_cliente, nit_cliente, num_cliente, dir_cliente, fecha_pedido, id_user, serie_pedido, total_pedido) VALUES ('" & namecliente & "','" & nitcliente & "','" & telefonocliente & "','" & dircliente & "','" & fechasql & "'," & iduser & ",'" & seriepedido & "','" & TbTotal.Text & "');"
+        Dim sQuery = "INSERT INTO pedidos (name_cliente, nit_cliente, 
+          num_cliente, dir_cliente, fecha_pedido, id_user, serie_pedido, 
+          total_pedido) VALUES ('" & namecliente & "','" & nitcliente & "',
+          '" & telefonocliente & "','" & dircliente & "','" & fechasql & "',
+          " & iduser & ",'" & seriepedido & "','" & TbTotal.Text & "');"
         da = New MySqlDataAdapter(sQuery, conn)
         dt = New DataTable
         da.Fill(dt)
@@ -41,7 +45,11 @@ Public Class Ventas
         conn.Open()
         Dim sQuery As String = ""
         For i = 0 To Productos.Items.Count - 1 Step 1
-            sQuery = sQuery + "INSERT INTO detalle_pedidos (id_pedido, id_medicamento, medicamento_cantidad) VALUES (" & idpedido & "," & vectorid.Items(i) & "," & Convert.ToString(Cantidad.Items(i)) & ");" + vbCrLf + "UPDATE medicamento SET medica_existencias= " & restavector.Items(i) & " WHERE id_medicamento = " & vectorid.Items(i) & ";"
+            sQuery = sQuery + "INSERT INTO detalle_pedidos (id_pedido, id_medicamento, 
+            medicamento_cantidad) VALUES (" & idpedido & "," & vectorid.Items(i) & ",
+            " & Convert.ToString(Cantidad.Items(i)) & ");" + vbCrLf +
+            "UPDATE medicamento SET medica_existencias= " & restavector.Items(i) &
+            " WHERE id_medicamento = " & vectorid.Items(i) & ";"
         Next
         da = New MySqlDataAdapter(sQuery, conn)
         dt = New DataTable
